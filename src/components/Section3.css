@@ -1,0 +1,89 @@
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* SECTION 3 - Pinned scroll animation (replicates GSAP ScrollTrigger pin) */
+
+.p20b { padding-bottom: 20vh; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ PIN WRAPPER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s3_pin_wrapper {
+  position: relative;
+}
+
+#s3_home {
+  overflow: hidden;
+}
+
+#s3_home .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ IMAGE TO BIG ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference mobile: .sec_img.to_big picture { height: 80vh; } */
+.sec_img.to_big picture {
+  height: 80vh;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ FILTER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .filter_bt { background: linear-gradient(to top, var(--black), transparent); } */
+.filter_bt {
+  background: linear-gradient(to top, var(--black), transparent);
+}
+.filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ TEXT ENTER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference mobile: .text_enter { position: absolute; left: 0; bottom: 1rem; text-align: center; font-size: clamp(4rem, 15vw, 12vw); } */
+.text_enter {
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+  text-align: center;
+  font-size: clamp(4rem, 15vw, 12vw);
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ H1 TYPOGRAPHY ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference index.css already defines h1,.h1 base styles */
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ (from custom.css) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+@media screen and (min-width: 1024px) {
+
+  .s3_pin_wrapper {
+    height: 250vh;
+  }
+
+  #s3_home {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  #s3_home .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Reference: .sec_img.to_big { transform: translateX(var(--c5o)); } */
+  .sec_img.to_big {
+    transform: translateX(var(--c5o));
+  }
+
+  /* Reference: .sec_img.to_big picture { height: 100vh; } */
+  .sec_img.to_big picture {
+    height: 100vh;
+  }
+
+  /* Reference: .text_enter { bottom: 5%; white-space: nowrap; transform: translateX(100%); } */
+  .text_enter {
+    bottom: 5%;
+    white-space: nowrap;
+    transform: translateX(100%);
+  }
+}
