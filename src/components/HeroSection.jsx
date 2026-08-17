@@ -235,9 +235,10 @@ const HeroSection = () => {
         <div className="filter filter_bt"></div>
 
         <div className="container p15tb p5lr h100 flex">
-          <h1 className={`rel sec_trigger ${isActive ? 'active' : ''}`}>
+          <h1 className={`sec_trigger ${isActive ? 'active' : ''}`}>
             <span className="riga_1">
-              <span>Study of</span> <span>architecture</span>
+              <span>Study of</span>
+              <span>architecture</span>
             </span>
             <span className="wrp w100 rel">
               <span className="w100 riga_2">INTERIOR</span>

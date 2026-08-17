@@ -241,7 +241,7 @@
 /* HERO SECTION */
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 
-.s1 { overflow: hidden; }
+.s1 { overflow: hidden; position: relative; }
 
 .s1 .container { min-height: 100dvh; padding-top: calc(85px + (150 - 85) * ((100vw - 320px) / 1600)); }
 
@@ -262,12 +262,13 @@
 /* H1 ANIMATIONS */
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 
-#s1_home h1 { font-size: 13vw; }
+#s1_home h1 { font-size: 13vw; width: 100%; }
 #s1_home h1 span { display: block; line-height: 0.8; }
-#s1_home span.wrp { text-align: right; margin-top: 5vh; }
-#s1_home span.riga_3 { margin-right: 30%; width: auto; }
+#s1_home span.riga_1 { position: absolute; top: 20%; left: 4%; text-align: left; }
+#s1_home span.wrp { position: absolute; bottom: 6%; right: 4%; text-align: right; margin-top: 0; }
+#s1_home span.riga_3 { display: block; width: auto; margin: 0; }
 
-#s1_home .sec_trigger .riga_1 span { transform: translateX(-100%); opacity: 0; transition: 1.5s ease .5s; }
+#s1_home .sec_trigger .riga_1 span { display: block; transform: translateX(-100%); opacity: 0; transition: 1.5s ease .5s; }
 #s1_home .sec_trigger.active .riga_1 span { opacity: 1; transform: translateX(0) skewX(0); }
 
 #s1_home .sec_trigger .riga_2, #s1_home .sec_trigger .riga_3 { transform: translateX(100%); opacity: 0; transition: 1.5s ease 1s; }
@@ -333,9 +334,9 @@
 
   /* Hero typography */
   #s1_home h1 { font-size: 9vw; }
-  #s1_home span.riga_1 { position: absolute; top: calc(85px + (200 - 85) * ((100vw - 320px) / 1600)); left: var(--c2o); }
-  #s1_home span.wrp { position: absolute; margin-top: 0; bottom: var(--c5v); right: var(--c2o); }
-  #s1_home span.riga_3 { margin-right: 15%; }
+  #s1_home span.riga_1 { position: absolute; top: 20%; left: 4%; text-align: left; }
+  #s1_home span.wrp { position: absolute; bottom: 6%; right: 4%; text-align: right; margin-top: 0; }
+  #s1_home span.riga_3 { margin: 0; }
   #s1_home .slogan { left: var(--c2o); }
 
   .s1_title p { font-size: 2.5em; }
