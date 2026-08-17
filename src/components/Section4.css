@@ -1,0 +1,72 @@
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* SECTION 4 (reference: #s5_home) - Mission text with textAnim reveal */
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ FOUNDATION-BASED CLASSES ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+section, .container { position: relative; width: 100%; }
+.container { max-width: 1920px; margin: auto; }
+
+.rel { position: relative; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ THREE-COLUMN GRID LAYOUT ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Mobile: single column stack */
+#s5_home .grid-3col {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4vh;
+}
+
+/* Desktop 1024px+: three columns — never wraps */
+@media screen and (min-width: 1024px) {
+  #s5_home .grid-3col {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3%;
+    align-items: start;
+  }
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ UTILITY CLASSES ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.p10t { padding-top: var(--c10v); }
+.p15b { padding-bottom: 15vh; }
+.p5lr { padding-left: 5%; padding-right: 5%; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ TEXT ANIM (from custom.css) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.textAnim p, .textAnim li, .textAnim p a, .textAnim li a {
+  opacity: 0;
+  transform: translateY(25%);
+  transition: all .25s ease, opacity 1s ease .25s, transform 1s ease .25s;
+}
+.textAnim.active p, .textAnim.active li, .textAnim.active p a, .textAnim.active li a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ H2 SPLIT TEXT ANIMATION ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.split-parent { overflow: hidden; }
+
+.textAnim h2 .split-child {
+  opacity: 0;
+  transform: translateY(25%);
+  transition: opacity 1s ease .25s, transform 1s ease .25s;
+}
+
+.textAnim.active h2 .split-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ H2 + TEXT TYPOGRAPHY ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.text { --title-color: var(--white); --text-color: var(--white); }
+
+#s5_home h2 {
+  font-family: var(--h2-family);
+  font-size: var(--h2-size);
+  line-height: var(--h2-line-height);
+  font-weight: var(--h2-weight);
+  color: var(--h2-color);
+}
+
+#s5_home p {
+  font-family: var(--main-font);
+  color: var(--white);
+  font-weight: 300;
+}
