@@ -252,6 +252,9 @@
 
 .filter { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 .filter_black { background-color: #1e1e1e; opacity: .5; }
+.filter_bt { background: linear-gradient(to top, var(--black), transparent); }
+
+.container { max-width: 1920px; margin: auto; }
 
 .s1_title p { font-size: 2em; font-family: var(--title-font); line-height: 1; }
 
@@ -264,7 +267,7 @@
 #s1_home span.wrp { text-align: right; margin-top: 5vh; }
 #s1_home span.riga_3 { margin-right: 30%; width: auto; }
 
-#s1_home .sec_trigger .riga_1 span { transform: translateX(-100%); opacity: 0; transition: 1.5s ease .5s; display: inline-block; }
+#s1_home .sec_trigger .riga_1 span { transform: translateX(-100%); opacity: 0; transition: 1.5s ease .5s; }
 #s1_home .sec_trigger.active .riga_1 span { opacity: 1; transform: translateX(0) skewX(0); }
 
 #s1_home .sec_trigger .riga_2, #s1_home .sec_trigger .riga_3 { transform: translateX(100%); opacity: 0; transition: 1.5s ease 1s; }
@@ -274,8 +277,8 @@
 #s1_home .slogan { position: absolute; left: var(--c5o); bottom: var(--c5v); }
 #s1_home .slogan p { width: 15ch; }
 
-.textAnim p { transition: .75s ease-out 1.25s; opacity: 0; transform: translateY(25%); }
-.textAnim.active p { opacity: 1; transform: translateY(0); }
+.textAnim p, .textAnim li, .textAnim p a, .textAnim li a { opacity: 0; transform: translateY(25%); transition: all .25s ease, opacity 1s ease .25s, transform 1s ease .25s; }
+.textAnim.active p, .textAnim.active li, .textAnim.active p a, .textAnim.active li a { opacity: 1; transform: translateY(0); }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 /* RESPONSIVE 601px */

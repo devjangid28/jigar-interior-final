@@ -14,6 +14,23 @@ html {
   --main-font: "Anek Bangla", sans-serif;
   --title-font: 'Astetes', sans-serif;
   --write-font: 'Nothing You Could Do', sans-serif;
+  --c5o: 5%;
+  --c2o: 2.5%;
+  --c1o: 1%;
+  --c5v: 5vh;
+  --c7v: 7vh;
+  --c10v: 10vh;
+  --c15v: 15vh;
+  font-size: 20px;
+  --rem: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 1920px) {
+  html {
+    font-size: calc(16px + (20 - 16) * ((100vw - 360px) / 1560));
+  }
 }
 
 body {
@@ -22,6 +39,20 @@ body {
   color: var(--white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 {
+  font-family: var(--title-font);
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 100;
+  line-height: 1.1;
+}
+
+p {
+  font-family: var(--main-font);
+  color: var(--white);
+  font-weight: 300;
 }
 
 html, body, div, span, applet, object, iframe,
