@@ -1,0 +1,129 @@
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* SECTION 5 - Servizi (reference: #sec_servizi) - Hover image reveal */
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ CONTAINER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#sec_servizi .container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+}
+
+#sec_servizi .p10tb { padding-top: var(--c10v); padding-bottom: var(--c10v); }
+#sec_servizi .p5lr { padding-left: 5%; padding-right: 5%; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ WRAPPER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#wrapper_servizi {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ BOX_ANIM (service links) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.box_anim {
+  padding: 1rem;
+  display: block;
+  z-index: 0;
+  width: fit-content;
+  font-size: 6.75vw;
+  font-family: var(--title-font);
+  color: var(--white);
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.box_anim:hover { z-index: 1; }
+
+/* Servizi-specific overrides (mobile) */
+#wrapper_servizi .box_anim {
+  font-size: 12vw;
+  padding: 0.5rem;
+  margin: 0 auto;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ BOX_ANIM ::after (underline) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.box_anim::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.5rem;
+  width: 100%;
+  height: 1px;
+  background-color: var(--white);
+  transform: scaleX(0);
+  transform-origin: center right;
+  transition: transform 1s cubic-bezier(.52, 0, 0, 1);
+}
+
+/* Mobile scroll-triggered state */
+.box_anim.hover_mob::after {
+  transform: scaleX(1);
+  transform-origin: center left;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ IMG_HOVER (floating image) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.img_hover {
+  display: block;
+  position: absolute;
+  width: 18rem;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.img_hover img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path 0s ease-in-out 0.5s;
+  filter: brightness(0.75);
+}
+
+.img_hover img.visible {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+  transition: 0.5s ease-in-out;
+}
+
+/* Show image when wrapper is hovered */
+#wrapper_servizi:hover .img_hover {
+  opacity: 1;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+@media screen and (min-width: 1024px) {
+
+  /*∞∞∞∞ SEC SERVIZI ∞∞∞∞*/
+  #wrapper_servizi .box_anim {
+    font-size: 8vw;
+    padding: 0.75rem;
+    margin: 0;
+  }
+
+  .box_anim::after {
+    height: 3px;
+    bottom: 1.5rem;
+    transform: scaleX(0);
+    transform-origin: center right;
+    transition: transform 0.7s cubic-bezier(.52, 0, 0, 1);
+  }
+
+  .box_anim:hover::after {
+    transform: scaleX(1);
+    transform-origin: center left;
+  }
+
+  #wrapper_servizi .img_hover {
+    width: 23rem;
+    aspect-ratio: 16 / 10;
+  }
+}
