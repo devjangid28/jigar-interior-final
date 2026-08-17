@@ -1,0 +1,178 @@
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* SECTION 6 (reference: #sec_2) - From concept to emotion */
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ WIDTH UTILITIES ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .w45l, .w50l, .w90l { width: 100%; } on mobile */
+.w45l, .w50l, .w90l { width: 100%; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ GAP UTILITY ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .flex-auto.gap-10-5 { gap: var(--c10v) var(--c5o); } */
+.flex-auto.gap-10-5 { gap: var(--c10v) var(--c5o); }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ MARGIN UTILITY ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .m15t { margin-top: var(--c15v); } */
+.m15t { margin-top: var(--c15v); }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ FIRMA (signature SVG) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .firma { position: absolute; bottom: 0; right: 0; width: 15rem; transform: translate(10%, 60%); } */
+.firma { position: absolute; bottom: 0; right: 0; width: 15rem; transform: translate(10%, 60%); }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ LINK BUTTON ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .link { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; ... } */
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  width: auto;
+  overflow: hidden;
+  position: relative;
+  padding-right: .25rem;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--white);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: center left;
+  transition: transform .7s cubic-bezier(.52, 0, 0, 1);
+}
+
+.link span { transition: transform .7s cubic-bezier(.52, 0, 0, 1); }
+
+.link svg {
+  height: .85rem;
+  width: auto;
+  transition: transform .7s cubic-bezier(.52, 0, 0, 1), opacity .7s cubic-bezier(.52, 0, 0, 1);
+}
+
+.link svg path { fill: var(--white); }
+
+/* First SVG (left arrow) - hidden by default */
+.link svg:nth-of-type(1) {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate3d(-100%, -100%, 0);
+  opacity: 0;
+}
+
+/* Second SVG (right arrow) - visible by default */
+.link svg:nth-of-type(2) { }
+
+/* Hover states */
+.link:hover span { transform: translateX(1.5rem); }
+.link:hover svg:nth-of-type(2) { transform: translate3d(110%, 85%, 0); opacity: 0; }
+.link:hover svg:nth-of-type(1) { transform: translate3d(0, -50%, 0); opacity: 1; }
+.link:hover::after { transform: scaleX(1); transform-origin: center right; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ WRP_FRECCETTA (arrow container) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference base */
+.wrp_freccetta p {
+  width: 30ch;
+  font-size: 20.5442px;
+  font-family: var(--write-font);
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.wrp_freccetta svg { width: 5rem; min-width: 5rem; }
+
+.wrp_freccetta.bottom { transform: translate(30%, -20%); }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SEC_2 SPECIFICS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .text :where(.link, .btn) { margin-top: 1.5em; } */
+#sec_2 .text :where(.link, .btn) { margin-top: 1.5em; }
+
+/* Reference: #page_home #sec_2 .wrp_freccetta p { transform: translateX(-50%); } — base level */
+/* Also override #sec_2 .text p (higher specificity) to keep Nothing You Could Do font */
+#sec_2 .wrp_freccetta p {
+  transform: translateX(-50%);
+  font-family: var(--write-font);
+  font-size: 20.5442px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SEC_2 TYPOGRAPHY ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* H2: Elegant luxury serif (Astetes) — matches .s2_page h2 from Section2.css */
+#sec_2 .text h2 {
+  font-family: var(--title-font);
+  font-size: var(--h2-size);
+  line-height: var(--h2-line-height);
+  font-weight: var(--h2-weight);
+  color: var(--h2-color);
+  margin-bottom: 15px;
+}
+
+/* P: Clean refined sans-serif (Anek Bangla) */
+#sec_2 .text p {
+  font-family: var(--main-font);
+  font-weight: 300;
+}
+
+/* P_ANEK: Override for main paragraph — Anek Bangla */
+#sec_2 .text p.p_anek {
+  font-family: "Anek Bangla", sans-serif;
+  font-size: 20.5231px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+/* LINK: Clean uppercase CTA (Anek Bangla) */
+#sec_2 .text .link {
+  font-family: var(--main-font);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* LINK_ANEK: Who we are — Anek Bangla override */
+#sec_2 .text .link.link_anek {
+  font-family: "Anek Bangla", sans-serif;
+  font-size: 20.54px;
+  font-weight: 400;
+  color: #FFFFFF;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+@media screen and (min-width: 1024px) {
+
+  /*∞∞∞∞ WIDTH UTILITIES ∞∞∞∞*/
+  .w45l { width: 45%; }
+  .w50l { width: 50%; }
+  .w90l { width: 90%; }
+
+  /*∞∞∞∞ FIRMA ∞∞∞∞*/
+  .firma { width: 17rem; transform: translate(30%, -30%); }
+
+  /*∞∞∞∞ WRP_FRECCETTA DESKTOP ∞∞∞∞*/
+  .wrp_freccetta { position: absolute; z-index: 1; }
+  .wrp_freccetta svg { width: 6rem; min-width: 6rem; }
+
+  .wrp_freccetta.bottom:not(.left, .right) {
+    bottom: 0;
+    transform: translateY(100%);
+  }
+  .wrp_freccetta.bottom:not(.left, .right) svg { transform: rotate(-20deg) translate(-10%, -40%); }
+  .wrp_freccetta.bottom:not(.left, .right) p { transform: translateX(-50%); }
+
+  /*∞∞∞∞ SEC_2 SPECIFIC DESKTOP ∞∞∞∞*/
+  #sec_2 .text { margin-top: var(--c7v); }
+  #sec_2 .wrp_freccetta { left: 0; bottom: 30%; }
+  #sec_2 .wrp_freccetta.bottom:not(.left, .right) svg { transform: rotate(10deg) translate(-10%, -40%); width: 10rem; }
+  #sec_2 .wrp_freccetta.bottom:not(.left, .right) p { transform: translate(-110%, -90%); }
+}
