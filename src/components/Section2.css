@@ -1,0 +1,139 @@
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* SECTION 2 - Tecnoarreda.it Exact Replica */
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ UTILITY CLASSES ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+
+.p5lr { padding-left: 5%; padding-right: 5%; }
+.p10tb { padding-top: var(--c10v); padding-bottom: var(--c10v); }
+.p10b { padding-bottom: var(--c10v); }
+.flex { display: flex; }
+.flex-r { display: flex; flex-direction: row; }
+.flex-auto { flex: 1 1 auto; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-7-5 { gap: 7.5%; }
+.w40l { width: 100%; }
+.w55l { width: 100%; }
+.w100 { width: 100%; }
+.rel { position: relative; }
+.tar_mobile { text-align: right; }
+.m7t { margin-top: 1em; }
+.ancor { scroll-margin-top: 0; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SECTION 2 BASE ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+
+.s2_page { overflow: hidden; }
+.s2_page .container { position: relative; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ TEXT COLOR COMP (Two-layer text) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .not_text_color_comp { opacity: .25; } */
+.not_text_color_comp { opacity: .25; }
+
+/* Reference: span.text_color_comp { position: absolute; top: 0; left: 0; color: var(--white); display: block; width: 100%; height: 100%; } */
+span.text_color_comp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--white);
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Reference: span.text_color_comp .split-child { clip-path: inset(0% 100% 0% 0%); } */
+span.text_color_comp .split-child {
+  clip-path: inset(0% 100% 0% 0%);
+}
+
+/* Reference: span.text_color_comp .split-child .split-child { color: var(--white); } */
+span.text_color_comp .split-child .split-child { color: var(--white); }
+
+/* Reference: .split-parent { overflow: hidden; } */
+.split-parent { overflow: hidden; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ IMAGE ANIMATIONS (from custom.css) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .sec_trigger.sec_img.toLeft picture { clip-path: inset(0 0 0 100%); transition: 2s cubic-bezier(.76,0,.24,1); } */
+.sec_trigger.sec_img.toLeft picture { clip-path: inset(0 0 0 100%); transition: 2s cubic-bezier(.76,0,.24,1); }
+/* Reference: .sec_trigger.sec_img.toRight picture { clip-path: inset(0 100% 0 0); transition: 2s cubic-bezier(.76,0,.24,1); } */
+.sec_trigger.sec_img.toRight picture { clip-path: inset(0 100% 0 0); transition: 2s cubic-bezier(.76,0,.24,1); }
+
+/* Reference: .sec_trigger.sec_img picture img { transform: scale(1.6); opacity: 0; transition: 3s cubic-bezier(.76,0,.24,1) -.25s, opacity .1s ease; will-change: transform; } */
+.sec_trigger.sec_img picture img { transform: scale(1.6); opacity: 0; transition: 3s cubic-bezier(.76,0,.24,1) -.25s, opacity .1s ease; will-change: transform; }
+/* Reference: .sec_trigger.active.sec_img picture { clip-path: inset(0 0 0 0); transform: scale(1); } */
+.sec_trigger.active.sec_img picture { clip-path: inset(0 0 0 0); transform: scale(1); }
+/* Reference: .sec_trigger.active.sec_img picture img { transform: scale(1); opacity: 1; } */
+.sec_trigger.active.sec_img picture img { transform: scale(1); opacity: 1; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ ARROW / FRECCIA (from custom.css) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: .sec_trigger .freccia_box { transform: scale(0); opacity: 0; transition: 1s cubic-bezier(.76,0,.24,1) 1s; transform-origin: top left; } */
+.sec_trigger .freccia_box { transform: scale(0); opacity: 0; transition: 1s cubic-bezier(.76,0,.24,1) 1s; transform-origin: top left; }
+/* Reference: .sec_trigger .freccia_box svg { opacity: 0; transition: .25s ease 1s; } */
+.sec_trigger .freccia_box svg { opacity: 0; transition: .25s ease 1s; }
+/* Reference: .sec_trigger.active .freccia_box { transform: scale(1.0); opacity: 1; } */
+.sec_trigger.active .freccia_box { transform: scale(1.0); opacity: 1; }
+/* Reference: .sec_trigger.active .freccia_box svg { opacity: 1; } */
+.sec_trigger.active .freccia_box svg { opacity: 1; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SECTION 2 SPECIFICS (from custom.css) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* Reference: #s2_home .wrp_freccetta p { width: 13ch; } */
+#s2_home .wrp_freccetta p { width: 13ch; }
+/* Reference: #s2_home .wrp_freccetta svg { transform: rotate(180deg) translate(-40%, -10%); } */
+#s2_home .wrp_freccetta svg { transform: rotate(180deg) translate(-40%, -10%); }
+
+.wrp_freccetta p {
+  font-family: var(--write-font);
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ H2 TYPOGRAPHY ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+
+h2, .h2 {
+  --h2-max: 60; --h2-size: 60px;
+  --h2-min: 40; --h2-min-px: 40px;
+  --h2-color: var(--white);
+  --h2-family: var(--title-font);
+  --h2-line-height: 1.1;
+  --h2-weight: 100;
+  --h2-spacing: initial; --h2-style: normal;
+}
+
+@media screen and (max-width: 1920px) {
+  h2, .h2 {
+    --h2-diff: calc(var(--h2-max) - var(--h2-min));
+    --h2-size: calc(var(--h2-min-px) + var(--h2-diff) * ((100vw - 360px) / 1560));
+  }
+}
+
+.s2_page h2 {
+  font-family: var(--h2-family);
+  font-size: var(--h2-size);
+  line-height: var(--h2-line-height);
+  font-weight: var(--h2-weight);
+  color: var(--h2-color);
+  text-transform: uppercase;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ RATIO + PICTURE ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+
+.ratio-1-1e1 { aspect-ratio: 1 / 1.2; overflow: hidden; width: 100%; }
+picture { display: block; }
+picture > img { width: 100%; height: 100%; object-fit: cover; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ (from custom.css) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+
+@media screen and (min-width: 1024px) {
+
+  .w40l { width: 40%; }
+  .w55l { width: 55%; }
+
+  .wrp_freccetta { position: absolute; z-index: 1; }
+
+  .wrp_freccetta.top:not(.left, .right) { transform: translateY(-110%); }
+
+  /* Reference: #s2_home { margin-bottom: -25%; } */
+  #s2_home { margin-bottom: -25%; }
+  /* Reference: #s2_home .wrp_freccetta { transform: translate(-100%, -50%); z-index: 1; } */
+  #s2_home .wrp_freccetta { transform: translate(-100%, -50%); z-index: 1; }
+  /* Reference: #s2_home .wrp_freccetta p { transform: translate(-40%, -20%); } */
+  #s2_home .wrp_freccetta p { transform: translate(-40%, -20%); }
+}
