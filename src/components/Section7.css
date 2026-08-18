@@ -1,0 +1,314 @@
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* SECTION 7 - Realizzazioni / Projects - Horizontal Scroll */
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ CONTAINER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#sec_realizzazioni .container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ MOBILE SECTION ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s7_mobile {
+  display: block;
+}
+
+.s7_desktop {
+  display: none;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ MOBILE SWIPER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s7_swiper_wrap {
+  overflow: hidden;
+}
+
+.s7_swiper_track {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.s7_swiper_slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.s7_swiper_slide.sized {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ MOBILE TEXT ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#sec_realizzazioni .s7_text h2 {
+  font-family: var(--title-font);
+  font-size: var(--h2-size, 3.5rem);
+  line-height: 1.1;
+  font-weight: 100;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ LINK BUTTON ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#sec_realizzazioni .s7_link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  width: auto;
+  overflow: hidden;
+  position: relative;
+  padding-right: .25rem;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#sec_realizzazioni .s7_link::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--white);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: center left;
+  transition: transform .7s cubic-bezier(.52, 0, 0, 1);
+}
+
+#sec_realizzazioni .s7_link span {
+  transition: transform .7s cubic-bezier(.52, 0, 0, 1);
+}
+
+#sec_realizzazioni .s7_link svg {
+  height: .85rem;
+  width: auto;
+  transition: transform .7s cubic-bezier(.52, 0, 0, 1), opacity .7s cubic-bezier(.52, 0, 0, 1);
+}
+
+#sec_realizzazioni .s7_link svg path { fill: var(--white); }
+
+#sec_realizzazioni .s7_link svg:nth-of-type(1) {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate3d(-100%, -100%, 0);
+  opacity: 0;
+}
+
+#sec_realizzazioni .s7_link:hover span { transform: translateX(1.5rem); }
+#sec_realizzazioni .s7_link:hover svg:nth-of-type(2) { transform: translate3d(110%, 85%, 0); opacity: 0; }
+#sec_realizzazioni .s7_link:hover svg:nth-of-type(1) { transform: translate3d(0, -50%, 0); opacity: 1; }
+#sec_realizzazioni .s7_link:hover::after { transform: scaleX(1); transform-origin: center right; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ ASPECT RATIOS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#sec_realizzazioni .ratio-3-4 {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+#sec_realizzazioni .ratio-4-5 {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+#sec_realizzazioni .ratio-1-1 {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+#sec_realizzazioni picture {
+  display: block;
+}
+
+#sec_realizzazioni picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ UTILITY CLASSES ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.tac_mobile { text-align: center; }
+.m7t { margin-top: 0.7rem; }
+
+.textAnim p { opacity: 0; transform: translateY(25%); transition: all .25s ease, opacity 1s ease .25s, transform 1s ease .25s; }
+.textAnim.active p { opacity: 1; transform: translateY(0); }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SIZED (mobile swiper bg images) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s7_swiper_slide.sized {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--bkg-small);
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ NAV DOTS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s7_nav_dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.s7_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+  padding: 0;
+}
+
+.s7_dot.active {
+  background: #fff;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ WRP_FRECCETTA ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#sec_realizzazioni .wrp_freccetta p {
+  width: 30ch;
+  font-size: 20.5442px;
+  font-family: var(--write-font);
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+#sec_realizzazioni .wrp_freccetta svg {
+  width: 5rem;
+  min-width: 5rem;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+@media screen and (min-width: 1024px) {
+
+  /*∞∞∞∞ SHOW/HIDE ∞∞∞∞*/
+  .s7_mobile { display: none; }
+  .s7_desktop { display: block; }
+
+  /*∞∞∞∞ SIZED responsive background ∞∞∞∞*/
+  .s7_swiper_slide.sized {
+    background-image: var(--bkg-medium);
+  }
+
+  /*∞∞∞∞ PIN SPACER ∞∞∞∞*/
+  .s7-pin-spacer {
+    position: relative;
+    width: 100%;
+  }
+
+  /*∞∞∞∞ SECTION STICKY PIN ∞∞∞∞*/
+  #sec_realizzazioni {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  /*∞∞∞∞ HORIZONTAL SCROLL WRAPPER ∞∞∞∞*/
+  #wrapper_scroll_orizzontale {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    align-items: flex-start;
+    width: max-content;
+    will-change: transform;
+    padding-bottom: 2rem;
+  }
+
+  /*∞∞∞∞ IMAGE ITEMS ∞∞∞∞*/
+  #wrapper_scroll_orizzontale .s7_sec_img {
+    flex: 0 0 auto;
+    height: auto;
+  }
+
+  #wrapper_scroll_orizzontale .s7_img_0 {
+    width: 50vw;
+    max-width: 600px;
+  }
+
+  #wrapper_scroll_orizzontale .s7_sec_img:nth-child(3) {
+    width: 38vw;
+    max-width: 480px;
+    margin-top: 5vh;
+  }
+
+  #wrapper_scroll_orizzontale .s7_sec_img:nth-child(4) {
+    width: 38vw;
+    max-width: 480px;
+    margin-top: -2vh;
+    position: relative;
+  }
+
+  #wrapper_scroll_orizzontale .s7_sec_img:nth-child(5) {
+    width: 42vw;
+    max-width: 520px;
+    margin-top: 8vh;
+  }
+
+  #wrapper_scroll_orizzontale .s7_sec_img:nth-child(6) {
+    width: 35vw;
+    max-width: 440px;
+    margin-top: 2vh;
+  }
+
+  /*∞∞∞∞ TEXT BLOCK ∞∞∞∞*/
+  #wrapper_scroll_orizzontale .s7_text {
+    flex: 0 0 auto;
+    width: 45vw;
+    max-width: 560px;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+
+  #wrapper_scroll_orizzontale .s7_text h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+
+  /*∞∞∞∞ WRP_FRECCETTA DESKTOP ∞∞∞∞*/
+  #sec_realizzazioni .wrp_freccetta {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 15%;
+  }
+
+  #sec_realizzazioni .wrp_freccetta svg {
+    width: 6rem;
+    min-width: 6rem;
+    transform: rotate(10deg);
+  }
+
+  #sec_realizzazioni .wrp_freccetta p {
+    transform: translateX(-30%);
+    font-family: var(--write-font);
+    font-size: 20.5442px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ LARGE SCREENS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+@media screen and (min-width: 1440px) {
+  .s7_swiper_slide.sized {
+    background-image: var(--bkg-large);
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .s7_swiper_slide.sized {
+    background-image: var(--bkg-xlarge);
+  }
+}
