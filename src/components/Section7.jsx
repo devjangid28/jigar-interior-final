@@ -235,11 +235,6 @@ const Section7 = () => {
         <div className="s7_mobile p10tb p5lr" ref={mobileSliderRef}>
           <div className="s7_text textAnim tac_mobile rel w100">
             <h2 className="h1">PROJECTS</h2>
-            <a href="#" className="link s7_link">
-              <ArrowSvg />
-              <span>Our projects</span>
-              <ArrowSvg />
-            </a>
           </div>
 
           <div className="s7_swiper_wrap rel w100 m7t">
@@ -282,11 +277,6 @@ const Section7 = () => {
 
           <div className="s7_text textAnim rel">
             <h2 className="h1">PROJECTS</h2>
-            <a href="#" className="link s7_link">
-              <ArrowSvg />
-              <span>Our projects</span>
-              <ArrowSvg />
-            </a>
           </div>
 
           {projects.slice(1).map((project) => (

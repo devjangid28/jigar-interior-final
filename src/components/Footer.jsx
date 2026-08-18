@@ -44,8 +44,8 @@ const Footer = () => {
             <div className="foot_block flex-r tac_mobile w33l rel">
               <div>
                 <p style={{ fontFamily: 'var(--title-font)' }}>
-                  <a href="tel:+919724441259" title="Chiamaci" rel="noopener">
-                    Tel: <u className="b0">+91 9724441259</u>
+                  <a href="tel:+919879337290" title="Chiamaci" rel="noopener">
+                    Tel: <u className="b0">+91 9879337290</u>
                   </a>
                 </p>
                 <p>
