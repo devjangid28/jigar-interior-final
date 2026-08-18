@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import './Section5.css';
 
 const services = [
-  { label: 'We design', id: 'img_2_1', src: 'https://www.tecnoarreda.it/wp-content/uploads/2025/06/TAV-4C-Abuja-Conference-Center-Main-Concourse-B-PROSPETTIVA.webp', alt: 'We design' },
-  { label: 'We Build', id: 'img_2_2', src: 'https://www.tecnoarreda.it/wp-content/uploads/2025/06/02colline-luxury--1280x720.webp', alt: 'We Build' },
-  { label: 'We renovate', id: 'img_2_3', src: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_04.webp', alt: 'We renovate' },
-  { label: 'We furnish', id: 'img_2_4', src: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/arredo-interno-di-una-sala-da-pranzo-1080x720.webp', alt: 'We furnish' },
+  { label: 'We design', id: 'img_2_1', src: '/interior 1.png', alt: 'We design' },
+  { label: 'We Build', id: 'img_2_2', src: '/interior 2.png', alt: 'We Build' },
+  { label: 'We renovate', id: 'img_2_3', src: '/interior 3.png', alt: 'We renovate' },
+  { label: 'We furnish', id: 'img_2_4', src: '/interior 4.png', alt: 'We furnish' },
 ];
 
 const Section5 = () => {

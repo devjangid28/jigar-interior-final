@@ -76,20 +76,8 @@ const Section2 = () => {
 
         <div className="sec_img sec_trigger toRight w40l rel">
           <picture className="rel w100 ratio-1-1e1">
-            <source
-              media="(max-width: 520px)"
-              srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole-1-600x424.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole-1-1019x720.webp 2x"
-            />
-            <source
-              media="(max-width: 980px)"
-              srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole-1-1019x720.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole-1-1528x1080.webp 2x"
-            />
-            <source
-              media="(max-width: 1440px)"
-              srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole-1-1528x1080.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole-1.webp 2x"
-            />
             <img
-              src="https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole-1.webp"
+              src="/interior 5.png"
               width="100"
               height="100"
               alt="Villa Nicole Project"
@@ -158,20 +146,8 @@ const Section2 = () => {
           </div>
 
           <picture className="rel w100 ratio-1-1e1">
-            <source
-              media="(max-width: 520px)"
-              srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A8918-600x899.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A8918-480x720.webp 2x"
-            />
-            <source
-              media="(max-width: 980px)"
-              srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A8918-480x720.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A8918-721x1080.webp 2x"
-            />
-            <source
-              media="(max-width: 1440px)"
-              srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A8918-721x1080.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A8918.webp 2x"
-            />
             <img
-              src="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A8918.webp"
+              src="/interior 10.png"
               width="100"
               height="100"
               alt="Style Details Interior Design"

@@ -27,104 +27,64 @@ const FrecciaSvg = () => (
 const projects = [
   {
     id: 'img_0',
-    alt: 'DETTAGLIO LETTO Collina Luxury Relais',
+    alt: 'Interior Design 1',
     ratio: 'ratio-3-4',
-    srcSet: {
-      small: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO-600x790.webp',
-      small2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO-547x720.webp',
-      medium: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO-547x720.webp',
-      medium2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO-820x1080.webp',
-      large: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO-820x1080.webp',
-      large2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO.webp',
-      fallback: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO.webp',
-    },
+    srcSet: { fallback: '/interior 1.png' },
     bkg: {
-      small: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO-600x790.webp')",
-      medium: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO-547x720.webp')",
-      large: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO-820x1080.webp')",
-      xlarge: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/04/DETTAGLIO-LETTO.webp')",
+      small: "url('/interior 1.png')",
+      medium: "url('/interior 1.png')",
+      large: "url('/interior 1.png')",
+      xlarge: "url('/interior 1.png')",
     },
   },
   {
     id: 'img_1',
-    alt: 'Tavolo Villa Linear',
+    alt: 'Interior Design 2',
     ratio: 'ratio-4-5',
-    srcSet: {
-      small: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228-600x954.webp',
-      small2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228-453x720.webp',
-      medium: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228-453x720.webp',
-      medium2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228-679x1080.webp',
-      large: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228-679x1080.webp',
-      large2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228.webp',
-      fallback: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228.webp',
-    },
+    srcSet: { fallback: '/interior 2.png' },
     bkg: {
-      small: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228-600x954.webp')",
-      medium: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228-453x720.webp')",
-      large: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228-679x1080.webp')",
-      xlarge: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0228.webp')",
+      small: "url('/interior 2.png')",
+      medium: "url('/interior 2.png')",
+      large: "url('/interior 2.png')",
+      xlarge: "url('/interior 2.png')",
     },
   },
   {
     id: 'img_2',
-    alt: 'Mobile bagno Tecnoarreda Interior Design',
+    alt: 'Interior Design 3',
     ratio: 'ratio-4-5',
     hasFreccia: true,
     frecciaText: 'Creative in concept, technical in detail',
-    srcSet: {
-      small: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4-600x811.webp',
-      small2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4-533x720.webp',
-      medium: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4-533x720.webp',
-      medium2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4-799x1080.webp',
-      large: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4-799x1080.webp',
-      large2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4.webp',
-      fallback: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4.webp',
-    },
+    srcSet: { fallback: '/interior 3.png' },
     bkg: {
-      small: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4-600x811.webp')",
-      medium: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4-533x720.webp')",
-      large: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4-799x1080.webp')",
-      xlarge: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/04/alcuni-progetti-di-progetto-di-tecnoarreda-interior-design-4.webp')",
+      small: "url('/interior 3.png')",
+      medium: "url('/interior 3.png')",
+      large: "url('/interior 3.png')",
+      xlarge: "url('/interior 3.png')",
     },
   },
   {
     id: 'img_3',
-    alt: 'zona lettura Chalet St. Moritz',
+    alt: 'Interior Design 4',
     ratio: 'ratio-3-4',
-    srcSet: {
-      small: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09-600x765.webp',
-      small2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09-564x720.webp',
-      medium: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09-564x720.webp',
-      medium2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09-847x1080.webp',
-      large: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09-847x1080.webp',
-      large2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09.webp',
-      fallback: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09.webp',
-    },
+    srcSet: { fallback: '/interior 4.png' },
     bkg: {
-      small: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09-600x765.webp')",
-      medium: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09-564x720.webp')",
-      large: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09-847x1080.webp')",
-      xlarge: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_09.webp')",
+      small: "url('/interior 4.png')",
+      medium: "url('/interior 4.png')",
+      large: "url('/interior 4.png')",
+      xlarge: "url('/interior 4.png')",
     },
   },
   {
     id: 'img_4',
-    alt: 'cucina Villa Linear 4',
+    alt: 'Interior Design 5',
     ratio: 'ratio-1-1',
-    srcSet: {
-      small: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145-600x400.webp',
-      small2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145-1079x720.webp',
-      medium: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145-1079x720.webp',
-      medium2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145-1619x1080.webp',
-      large: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145-1619x1080.webp',
-      large2x: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145.webp',
-      fallback: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145.webp',
-    },
+    srcSet: { fallback: '/interior 5.png' },
     bkg: {
-      small: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145-600x400.webp')",
-      medium: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145-1079x720.webp')",
-      large: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145-1619x1080.webp')",
-      xlarge: "url('https://www.tecnoarreda.it/wp-content/uploads/2025/05/513A0145.webp')",
+      small: "url('/interior 5.png')",
+      medium: "url('/interior 5.png')",
+      large: "url('/interior 5.png')",
+      xlarge: "url('/interior 5.png')",
     },
   },
 ];
@@ -311,18 +271,6 @@ const Section7 = () => {
 
           <div className="s7_sec_img s7_img_0">
             <picture className="w100 rel ratio-3-4">
-              <source
-                media="(max-width: 520px)"
-                srcSet={`${projects[0].srcSet.small}, ${projects[0].srcSet.small2x} 2x`}
-              />
-              <source
-                media="(max-width: 980px)"
-                srcSet={`${projects[0].srcSet.medium}, ${projects[0].srcSet.medium2x} 2x`}
-              />
-              <source
-                media="(max-width: 1440px)"
-                srcSet={`${projects[0].srcSet.large}, ${projects[0].srcSet.large2x} 2x`}
-              />
               <img
                 src={projects[0].srcSet.fallback}
                 width="100"
@@ -344,18 +292,6 @@ const Section7 = () => {
           {projects.slice(1).map((project) => (
             <div key={project.id} className={`s7_sec_img ${project.hasFreccia ? 's7_has_freccia' : ''}`}>
               <picture className={`w100 rel ${project.ratio}`}>
-                <source
-                  media="(max-width: 520px)"
-                  srcSet={`${project.srcSet.small}, ${project.srcSet.small2x} 2x`}
-                />
-                <source
-                  media="(max-width: 980px)"
-                  srcSet={`${project.srcSet.medium}, ${project.srcSet.medium2x} 2x`}
-                />
-                <source
-                  media="(max-width: 1440px)"
-                  srcSet={`${project.srcSet.large}, ${project.srcSet.large2x} 2x`}
-                />
                 <img
                   src={project.srcSet.fallback}
                   width="100"

@@ -23,10 +23,10 @@ const hoverLinks = [
 ];
 
 const hoverImages = [
-  { id: 'img_1', src: 'https://www.tecnoarreda.it/wp-content/uploads/2025/06/TAV-4C-Abuja-Conference-Center-Main-Concourse-B-PROSPETTIVA.webp', alt: 'We design' },
-  { id: 'img_2', src: 'https://www.tecnoarreda.it/wp-content/uploads/2025/06/02colline-luxury--1280x720.webp', alt: 'We build' },
-  { id: 'img_3', src: 'https://www.tecnoarreda.it/wp-content/uploads/2025/05/Wasescha_APT_Special_04.webp', alt: 'We renovate' },
-  { id: 'img_4', src: 'https://www.tecnoarreda.it/wp-content/uploads/2025/04/arredo-interno-di-una-sala-da-pranzo-1080x720.webp', alt: 'We furnish' },
+  { id: 'img_1', src: '/interior 1.png', alt: 'We design' },
+  { id: 'img_2', src: '/interior 2.png', alt: 'We build' },
+  { id: 'img_3', src: '/interior 3.png', alt: 'We renovate' },
+  { id: 'img_4', src: '/interior 4.png', alt: 'We furnish' },
 ];
 
 const HeroSection = () => {
@@ -164,6 +164,7 @@ const HeroSection = () => {
                       <a
                         href={item.href}
                         onClick={item.hasSub ? handleSubOpen : undefined}
+                        style={{ font: '31.9577px "Anek Bangla", sans-serif', color: '#FFFFFF' }}
                       >
                         {item.label}
                       </a>
@@ -211,20 +212,8 @@ const HeroSection = () => {
       {/* HERO SECTION */}
       <section className="s1" id="s1_home">
         <picture className="bkg_thumb abs w100 h100">
-          <source
-            media="(max-width: 520px)"
-            srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole-1019x720.webp"
-          />
-          <source
-            media="(max-width: 980px)"
-            srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole-1528x1080.webp"
-          />
-          <source
-            media="(max-width: 1440px)"
-            srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole.webp"
-          />
           <img
-            src="https://www.tecnoarreda.it/wp-content/uploads/2025/04/Progetto-villa-Nicole.webp"
+            src="/interior 3.png"
             width="100"
             height="100"
             alt="Interior Design"

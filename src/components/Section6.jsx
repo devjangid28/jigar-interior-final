@@ -61,20 +61,8 @@ const Section6 = () => {
         {/* Column 1: Image + Signature */}
         <div className="sec_img sec_trigger toRight w45l rel">
           <picture className="rel w100 ratio-1-1e1">
-            <source
-              media="(max-width: 520px)"
-              srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A9884-600x899.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A9884-480x720.webp 2x"
-            />
-            <source
-              media="(max-width: 980px)"
-              srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A9884-480x720.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A9884-721x1080.webp 2x"
-            />
-            <source
-              media="(max-width: 1440px)"
-              srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A9884-721x1080.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A9884.webp 2x"
-            />
             <img
-              src="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A9884.webp"
+              src="/owner.jpg"
               width="100"
               height="100"
               alt="Silverio Pezzoli"
@@ -268,23 +256,8 @@ const Section6 = () => {
           {/* Second image with arrow */}
           <div className="sec_img sec_trigger toLeft w100 flex-r flex-wrap m15t rel">
             <picture className="rel w90l ratio-1-1e1">
-              <source
-                media="(max-width: 520px)"
-                srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A0046-600x400.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A0046-1079x720.webp 2x"
-              />
-              <source
-                media="(max-width: 980px)"
-                srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A0046-1079x720.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A0046-1619x1080.webp 2x"
-              />
-              <source
-                media="(max-width: 1440px)"
-                srcSet="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A0046-1619x1080.webp, https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A0046.webp 2x"
-              />
               <img
-                src="https://www.tecnoarreda.it/wp-content/uploads/2025/06/513A0046.webp"
-                width="100"
-                height="100"
-                alt="Progetti Tecnoarreda Interior Design"
+                src="/interior 7.png"
               />
             </picture>
 

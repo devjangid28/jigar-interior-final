@@ -78,20 +78,8 @@ const Section3 = () => {
         <div className="container p20b p5lr">
           <div className="sec_img to_big w35l rel" ref={toBigRef}>
             <picture className="rel">
-              <source
-                media="(max-width: 520px)"
-                srcSet="https://www.tecnoarreda.it/wp-content/uploads/2026/05/Yhom_PrivateHouse21_89-600x383.webp, https://www.tecnoarreda.it/wp-content/uploads/2026/05/Yhom_PrivateHouse21_89-1127x720.webp 2x"
-              />
-              <source
-                media="(max-width: 980px)"
-                srcSet="https://www.tecnoarreda.it/wp-content/uploads/2026/05/Yhom_PrivateHouse21_89-1127x720.webp, https://www.tecnoarreda.it/wp-content/uploads/2026/05/Yhom_PrivateHouse21_89-1690x1080.webp 2x"
-              />
-              <source
-                media="(max-width: 1440px)"
-                srcSet="https://www.tecnoarreda.it/wp-content/uploads/2026/05/Yhom_PrivateHouse21_89-1690x1080.webp, https://www.tecnoarreda.it/wp-content/uploads/2026/05/Yhom_PrivateHouse21_89.webp 2x"
-              />
               <img
-                src="https://www.tecnoarreda.it/wp-content/uploads/2026/05/Yhom_PrivateHouse21_89.webp"
+                src="/interior 8.png"
                 width="100"
                 height="100"
                 alt="Pool inside the villa"
