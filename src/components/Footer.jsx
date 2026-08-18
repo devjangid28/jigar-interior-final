@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="w100 rel flex-t flex-auto gap-15-2" style={{ paddingTop: '100px' }}>
             <div className="foot_block flex-r tac_mobile w33l rel" style={{ paddingRight: '160px' }}>
               <div>
-                <p style={{ font: '31.9577px "Anek Bangla", sans-serif', color: '#FFFFFF' }}>
+                <p style={{ font: '31.9577px "Anek Bangla", sans-serif', color: 'var(--white)' }}>
                   <a
                     href="https://maps.app.goo.gl/Y49bmjVvK1i1TPjD9"
                     title="View on Google Maps"
@@ -58,7 +58,7 @@ const Footer = () => {
 
             <div className="foot_block flex tac_mobile w33l rel" style={{ paddingLeft: '160px' }}>
               <div>
-                <p style={{ font: '31.9577px "Anek Bangla", sans-serif', color: '#FFFFFF' }}>
+                <p style={{ font: '31.9577px "Anek Bangla", sans-serif', color: 'var(--white)' }}>
                   <a
                     href="#"
                     title="Seguici su Facebook"
@@ -68,7 +68,7 @@ const Footer = () => {
                     <u>Facebook</u>
                   </a>
                 </p>
-                <p style={{ font: '31.9577px "Anek Bangla", sans-serif', color: '#FFFFFF' }}>
+                <p style={{ font: '31.9577px "Anek Bangla", sans-serif', color: 'var(--white)' }}>
                   <a
                     href="https://www.instagram.com/jigar_interior?igsi=dHNiZ3Vjdjl2cTNl"
                     title="Seguici su Instagram"
@@ -92,7 +92,7 @@ const Footer = () => {
       </div>
 
       <div className="p10tb p1lr w100 rel" id="credits">
-        <p className="tac_mobile" style={{ textAlign: 'left', paddingLeft: '50px', font: '15px "Anek Bangla", sans-serif', color: '#FFFFFF' }}>
+        <p className="tac_mobile" style={{ textAlign: 'left', paddingLeft: '50px', font: '15px "Anek Bangla", sans-serif', color: 'var(--white)' }}>
           <span>&copy; 2026&nbsp;Jigar Interior Design srl </span>
           <span className="resp_sep"> - </span>
           <br />
@@ -129,7 +129,7 @@ const Footer = () => {
             Privacy preferences
           </a>
         </p>
-        <p className="tac_mobile" style={{ font: '15px "Anek Bangla", sans-serif', color: '#FFFFFF', paddingRight: '50px' }}>
+        <p className="tac_mobile" style={{ font: '15px "Anek Bangla", sans-serif', color: 'var(--white)', paddingRight: '50px' }}>
           Credits:{' '}
           <a
             href="#"

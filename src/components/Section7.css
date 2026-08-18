@@ -75,7 +75,7 @@
   content: "";
   width: 100%;
   height: 1px;
-  background-color: var(--white);
+  background-color: var(--red);
   position: absolute;
   right: 0;
   bottom: 0;
@@ -162,7 +162,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(243, 237, 227, 0.4);
   cursor: pointer;
   transition: background 0.3s;
   border: none;
@@ -170,7 +170,7 @@
 }
 
 .s7_dot.active {
-  background: #fff;
+  background: var(--red);
 }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ WRP_FRECCETTA ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/

@@ -3,12 +3,15 @@
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 
 :root {
-  --black: #0D0D0D;
-  --black-rgb: 13 13 13;
-  --white: #ffffff;
-  --white-rgb: 255 255 255;
-  --grey: #bac3c6;
-  --grey-rgb: 186 195 198;
+  --black: #2B2119;
+  --black-rgb: 43 33 25;
+  --white: #F3EDE3;
+  --white-rgb: 243 237 227;
+  --red: #D8232A;
+  --gold: #B08D57;
+  --grey: #6B5B4D;
+  --grey-rgb: 107 91 77;
+  --charcoal-alt: #3A3836;
   --main-font: "Nothing You Could Do", cursive;
   --title-font: 'Astetes', sans-serif;
   --write-font: 'Nothing You Could Do', sans-serif;
@@ -146,7 +149,7 @@
 
 #main_nav .head_menu li {
   font: inherit; line-height: 1; padding: 1rem var(--c5o);
-  border-bottom: 1px solid rgb(var(--white-rgb) / 25%);
+  border-bottom: 1px solid rgb(var(--gold-rgb, 176 141 87) / 25%);
   position: relative;
   display: flex; align-items: flex-start; justify-content: flex-start;
 }
@@ -167,7 +170,7 @@
 
 /* Underline hover */
 #main_nav .head_menu li a::after {
-  content: ""; width: 100%; height: 1px; background-color: var(--white);
+  content: ""; width: 100%; height: 1px; background-color: var(--red);
   position: absolute; right: 0; bottom: 0;
   transform: scaleX(0); transform-origin: center left;
   transition: transform .7s cubic-bezier(.52,0,0,1);
@@ -217,7 +220,7 @@
 
 .box_anim::after {
   content: ""; position: absolute; left: 0; bottom: .5rem;
-  width: 100%; height: 1px; background-color: var(--white);
+  width: 100%; height: 1px; background-color: var(--gold);
   transform: scaleX(0); transform-origin: center right;
   transition: transform 1s cubic-bezier(.52,0,0,1);
 }
@@ -251,7 +254,7 @@
 .bkg_thumb img { width: 100%; height: 100%; object-fit: cover; }
 
 .filter { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-.filter_black { background-color: #1e1e1e; opacity: .5; }
+.filter_black { background-color: var(--charcoal-alt); opacity: .5; }
 .filter_bt { background: linear-gradient(to top, var(--black), transparent); }
 
 .container { max-width: 1920px; margin: auto; }
@@ -321,7 +324,7 @@
   #main_nav .menu_wrapper::after {
     content: ""; width: 1px; height: 100%;
     position: absolute; left: 40%; top: 0;
-    background-color: rgb(var(--white-rgb) / 25%);
+    background-color: rgb(var(--gold-rgb, 176 141 87) / 25%);
   }
 
   /* Desktop-only items hidden in left menu on desktop */
