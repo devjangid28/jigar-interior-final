@@ -164,7 +164,7 @@ const HeroSection = () => {
                       <a
                         href={item.href}
                         onClick={item.hasSub ? handleSubOpen : undefined}
-                        style={{ font: '31.9577px "Anek Bangla", sans-serif', color: 'var(--white)' }}
+                        style={{ font: '31.9577px "Anek Bangla", sans-serif', color: '#FFFFFF' }}
                       >
                         {item.label}
                       </a>

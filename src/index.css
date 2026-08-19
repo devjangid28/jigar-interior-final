@@ -5,15 +5,12 @@
 }
 
 html {
-  --black: #2B2119;
-  --black-rgb: 43 33 25;
-  --white: #F3EDE3;
-  --white-rgb: 243 237 227;
-  --red: #D8232A;
-  --gold: #B08D57;
-  --grey: #6B5B4D;
-  --grey-rgb: 107 91 77;
-  --charcoal-alt: #3A3836;
+  --black: #0D0D0D;
+  --black-rgb: 13 13 13;
+  --white: #ffffff;
+  --white-rgb: 255 255 255;
+  --grey: #bac3c6;
+  --grey-rgb: 186 195 198;
   --main-font: "Nothing You Could Do", cursive;
   --title-font: 'Astetes', sans-serif;
   --write-font: 'Nothing You Could Do', sans-serif;

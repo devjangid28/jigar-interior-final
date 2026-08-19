@@ -68,7 +68,7 @@ section, .container { position: relative; width: 100%; }
 #s5_home p {
   font-family: 'Anek Bangla', sans-serif;
   font-size: 20.54px;
-  color: var(--white);
+  color: #FFFFFF;
   font-weight: 400;
   text-align: left;
 }
