@@ -21,6 +21,10 @@ html {
   --c7v: 7vh;
   --c10v: 10vh;
   --c15v: 15vh;
+  --ad-font-sans: "FKGrotesk-Regular", sans-serif;
+  --ad-font-serif: "OTNeglige-L", serif;
+  --ad-color-primary: #1a1a1e;
+  --ad-color-text: #d8d9e3;
   font-size: 20px;
   --rem: 20px;
   -webkit-font-smoothing: antialiased;
