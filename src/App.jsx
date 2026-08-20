@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroSection from './components/HeroSection.jsx';
+import ProjectsSection from './components/ProjectsSection.jsx';
 import Section2 from './components/Section2.jsx';
 import Section3 from './components/Section3.jsx';
 import Section4 from './components/Section4.jsx';
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <HeroSection />
+      <ProjectsSection />
       <Section2 />
       <Section3 />
       <Section4 />
