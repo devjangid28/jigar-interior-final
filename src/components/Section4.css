@@ -57,6 +57,10 @@ section, .container { position: relative; width: 100%; }
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ H2 + TEXT TYPOGRAPHY ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 .text { --title-color: var(--white); --text-color: var(--white); }
 
+#s5_home {
+  overflow: hidden;
+}
+
 #s5_home h2 {
   font-family: var(--h2-family);
   font-size: var(--h2-size);

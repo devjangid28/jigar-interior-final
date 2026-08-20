@@ -1,0 +1,337 @@
+/* SIDEMENU - Full-screen overlay inspired by andreadiego.es */
+
+.sidemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.sidemenu.is-open {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.sidemenu__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.92);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.sidemenu.is-open .sidemenu__backdrop {
+  opacity: 1;
+}
+
+.sidemenu__panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  height: 100%;
+  z-index: 1;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.sidemenu.is-open .sidemenu__panel {
+  transform: translateY(0);
+}
+
+/* LEFT - Navigation */
+.sidemenu__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidemenu__nav header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sidemenu__close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2em;
+  color: var(--ad-color-text, #d8d9e3);
+  font-family: var(--ad-font-sans, "FKGrotesk-Regular", sans-serif);
+  font-size: 0.75rem;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.sidemenu__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidemenu__close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.sidemenu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidemenu__list li a {
+  display: inline-block;
+  color: var(--ad-color-text, #d8d9e3);
+  font-family: var(--ad-font-serif, "OTNeglige-L", serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  text-decoration: none;
+  line-height: 1.2;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.sidemenu__list li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--ad-color-text, #d8d9e3);
+  transition: width 0.3s ease;
+}
+
+.sidemenu__list li a:hover {
+  color: #ffffff;
+}
+
+.sidemenu__list li a:hover::after {
+  width: 100%;
+}
+
+.sidemenu__copyright {
+  color: rgba(255, 255, 255, 0.35);
+  font-family: var(--ad-font-sans, "FKGrotesk-Regular", sans-serif);
+  font-size: 0.7rem;
+}
+
+/* CENTER - Image Slider (CSS infinite scroll) */
+.sidemenu__slider {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.sidemenu__slider::before,
+.sidemenu__slider::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sidemenu__slider::before {
+  top: 0;
+  background: linear-gradient(to bottom, #0D0D0D, transparent);
+}
+
+.sidemenu__slider::after {
+  bottom: 0;
+  background: linear-gradient(to top, #0D0D0D, transparent);
+}
+
+.sidemenu__slider-track {
+  display: flex;
+  flex-direction: column;
+  animation: sidemenu-scroll 30s linear infinite;
+}
+
+.sidemenu__slider-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes sidemenu-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.sidemenu__slider-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.sidemenu__slider-list li {
+  padding: 0.5rem 1.5rem;
+}
+
+.sidemenu__slider-list li a {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.sidemenu__slider-list li figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+.sidemenu__slider-list li img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sidemenu__slider-list li a:hover img {
+  transform: scale(1.05);
+}
+
+/* RIGHT - Contact */
+.sidemenu__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidemenu__contact-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.sidemenu__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2em;
+  color: var(--ad-color-text, #d8d9e3);
+  font-family: var(--ad-font-sans, "FKGrotesk-Regular", sans-serif);
+  font-size: 0.75rem;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.sidemenu__whatsapp svg {
+  fill: #25D366;
+}
+
+.sidemenu__whatsapp:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidemenu__contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sidemenu__contact-title {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--ad-font-sans, "FKGrotesk-Regular", sans-serif);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.sidemenu__contact-content {
+  color: var(--ad-color-text, #d8d9e3);
+  font-family: var(--ad-font-sans, "FKGrotesk-Regular", sans-serif);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.sidemenu__contact-content a {
+  color: var(--ad-color-text, #d8d9e3);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.sidemenu__contact-content a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--ad-color-text, #d8d9e3);
+  transition: width 0.3s ease;
+}
+
+.sidemenu__contact-content a:hover {
+  color: #ffffff;
+}
+
+.sidemenu__contact-content a:hover::after {
+  width: 100%;
+}
+
+.sidemenu__contact-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.sidemenu__contact-footer a {
+  color: rgba(255, 255, 255, 0.35);
+  font-family: var(--ad-font-sans, "FKGrotesk-Regular", sans-serif);
+  font-size: 0.65rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidemenu__contact-footer a:hover {
+  color: #ffffff;
+}
+
+/* MOBILE - Hide side menu entirely, use existing mobile menu instead */
+@media screen and (max-width: 768px) {
+  .sidemenu {
+    display: none;
+  }
+}
+
+/* TABLET */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .sidemenu__panel {
+    grid-template-columns: 0.8fr 1.2fr 1fr;
+  }
+
+  .sidemenu__nav {
+    padding: 1.5rem;
+  }
+
+  .sidemenu__contact {
+    padding: 1.5rem;
+  }
+}

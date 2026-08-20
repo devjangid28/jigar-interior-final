@@ -16,6 +16,10 @@
 .w100 { width: 100%; }
 .rel { position: relative; }
 .tar_mobile { text-align: right; }
+
+@media screen and (max-width: 1023px) {
+  .tar_mobile { text-align: left; }
+}
 .m7t { margin-top: 1em; }
 .ancor { scroll-margin-top: 0; }
 
@@ -74,10 +78,7 @@ span.text_color_comp .split-child .split-child { color: var(--white); }
 .sec_trigger.active .freccia_box svg { opacity: 1; }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SECTION 2 SPECIFICS (from custom.css) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
-/* Reference: #s2_home .wrp_freccetta p { width: 13ch; } */
-#s2_home .wrp_freccetta p { width: 13ch; }
-/* Reference: #s2_home .wrp_freccetta svg { transform: rotate(180deg) translate(-40%, -10%); } */
-#s2_home .wrp_freccetta svg { transform: rotate(180deg) translate(-40%, -10%); }
+/* Scoped to desktop only — see @media min-width: 1024px block below */
 
 .wrp_freccetta p {
   font-family: var(--write-font);
@@ -121,6 +122,93 @@ picture > img { width: 100%; height: 100%; object-fit: cover; }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ (from custom.css) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ MOBILE (max-width: 1023px) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+
+@media screen and (max-width: 1023px) {
+
+  /* Section overflow visible so freccia label can stick out left */
+  .s2_page {
+    overflow: visible;
+  }
+
+  /* ── CONTAINER 1: stack vertically, image on top, text below ── */
+  .s2_page .container.flex.flex-auto {
+    flex-direction: column;
+    gap: 5vw;
+    padding-top: 8vw;
+    padding-bottom: 5vw;
+  }
+
+  /* First image: full width */
+  .s2_page .container.flex.flex-auto .sec_img.w40l {
+    width: 100%;
+  }
+
+  /* Text: full width, left-aligned (text-align: start like reference) */
+  .s2_page .container.flex.flex-auto .text.w55l {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 60px;
+  }
+
+  /* ── CONTAINER 2: second image right-aligned, ~70% width ── */
+  .s2_page .container.flex-r {
+    justify-content: flex-end;
+    padding-top: 6rem;
+    padding-bottom: 8vw;
+    overflow: visible;
+  }
+
+  /* sec_img: 100% width, overflow visible for label above */
+  .s2_page .container.flex-r .sec_img.w40l {
+    width: 100%;
+    overflow: visible;
+  }
+
+  /* keep the picture itself clipped */
+  .s2_page .container.flex-r .sec_img.w40l picture {
+    overflow: hidden;
+  }
+
+  /* wrp_freccetta: absolutely above the image, 20px from left */
+  .s2_page .container.flex-r .sec_img .wrp_freccetta {
+    position: absolute !important;
+    bottom: 100% !important;
+    top: auto !important;
+    left: 20px !important;
+    right: auto !important;
+    transform: none !important;
+    z-index: 2;
+    padding-bottom: 0.4rem;
+  }
+
+  /* freccia_box: scale from top-left */
+  .s2_page .container.flex-r .sec_img .freccia_box {
+    transform-origin: top left !important;
+  }
+
+  /* Label text: left-aligned, above image */
+  .s2_page .container.flex-r .sec_img .wrp_freccetta p {
+    width: 10ch !important;
+    font-size: 0.75rem !important;
+    transform: none !important;
+    margin-top: 0 !important;
+    text-align: left !important;
+    line-height: 1.3;
+  }
+
+  /* SVG arrow: rotated to curve down-right toward image */
+  .s2_page .container.flex-r .sec_img .wrp_freccetta svg {
+    width: 35px !important;
+    height: auto !important;
+    transform: scaleX(1) rotate(180deg) !important;
+    display: block;
+    margin-left: 0.5rem;
+    margin-top: 0.9rem;
+    padding-top: -50px;
+  }
+}
+
 @media screen and (min-width: 1024px) {
 
   .w40l { width: 40%; }
@@ -135,5 +223,6 @@ picture > img { width: 100%; height: 100%; object-fit: cover; }
   /* Reference: #s2_home .wrp_freccetta { transform: translate(-100%, -50%); z-index: 1; } */
   #s2_home .wrp_freccetta { transform: translate(-100%, -50%); z-index: 1; }
   /* Reference: #s2_home .wrp_freccetta p { transform: translate(-40%, -20%); } */
-  #s2_home .wrp_freccetta p { transform: translate(-40%, -20%); }
+  #s2_home .wrp_freccetta p { transform: translate(-40%, -20%); width: 13ch; }
+  #s2_home .wrp_freccetta svg { transform: rotate(180deg) translate(-40%, -10%); }
 }

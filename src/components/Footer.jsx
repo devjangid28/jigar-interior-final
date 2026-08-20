@@ -22,7 +22,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="rel w100" role="contentinfo">
+    <footer className="rel w100" role="contentinfo" id="contact">
       <div className="rel">
         <div className="container p20tb p5lr">
           <div className="w100 rel flex-t flex-auto gap-15-2" style={{ paddingTop: '100px' }}>

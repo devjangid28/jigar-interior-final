@@ -92,7 +92,7 @@ const Section2 = () => {
                 <div
                   className="split-child"
                   key={`not-${i}`}
-                  style={{ display: 'block', textAlign: 'right', position: 'relative' }}
+                  style={{ display: 'block', textAlign: 'start', position: 'relative' }}
                 >
                   {line}
                 </div>
@@ -105,7 +105,7 @@ const Section2 = () => {
                   key={`color-${i}`}
                   style={{
                     display: 'block',
-                    textAlign: 'right',
+                    textAlign: 'start',
                     position: 'relative',
                     clipPath: 'inset(0% 100% 0% 0%)',
                   }}

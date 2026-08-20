@@ -114,6 +114,18 @@ footer {
 
 /* RESPONSIVE 768px */
 
+@media screen and (max-width: 767px) {
+  .foot_block {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #credits p {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
 @media screen and (min-width: 768px) {
   #credits br {
     display: none;

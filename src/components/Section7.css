@@ -2,6 +2,10 @@
 /* SECTION 7 - Realizzazioni / Projects - Horizontal Scroll */
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ CONTAINER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#sec_realizzazioni {
+  overflow: hidden;
+}
+
 #sec_realizzazioni .container {
   position: relative;
   width: 100%;

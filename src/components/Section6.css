@@ -94,6 +94,7 @@
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SEC_2 SPECIFICS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 /* Reference: .text :where(.link, .btn) { margin-top: 1.5em; } */
+#sec_2 { overflow: hidden; }
 #sec_2 .text :where(.link, .btn) { margin-top: 1.5em; }
 
 /* Reference: #page_home #sec_2 .wrp_freccetta p { transform: translateX(-50%); } — base level */
@@ -149,6 +150,14 @@
 }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+@media screen and (max-width: 1023px) {
+  .wrp_freccetta.bottom { transform: none; }
+  .wrp_freccetta p { width: auto; max-width: 80vw; font-size: 1rem; }
+  #sec_2 .wrp_freccetta p { transform: none; }
+  .firma { width: 8rem; transform: none; }
+  .img_hover { width: 12rem; }
+}
+
 @media screen and (min-width: 1024px) {
 
   /*∞∞∞∞ WIDTH UTILITIES ∞∞∞∞*/

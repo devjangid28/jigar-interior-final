@@ -2,6 +2,10 @@
 /* SECTION 5 - Servizi (reference: #sec_servizi) - Hover image reveal */
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ CONTAINER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#sec_servizi {
+  overflow: hidden;
+}
+
 #sec_servizi .container {
   position: relative;
   width: 100%;
@@ -100,6 +104,21 @@
 }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+@media screen and (max-width: 1023px) {
+  .img_hover {
+    width: 10rem;
+  }
+  .wrp_freccetta p {
+    width: auto;
+    max-width: 80vw;
+    font-size: 1rem;
+  }
+  .wrp_freccetta svg {
+    width: 3rem;
+    min-width: 3rem;
+  }
+}
+
 @media screen and (min-width: 1024px) {
 
   /*∞∞∞∞ SEC SERVIZI ∞∞∞∞*/
