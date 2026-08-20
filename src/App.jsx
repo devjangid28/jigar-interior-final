@@ -7,6 +7,7 @@ import Section4 from './components/Section4.jsx';
 import Section5 from './components/Section5.jsx';
 import Section6 from './components/Section6.jsx';
 import Section7 from './components/Section7.jsx';
+import Section8 from './components/Section8.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
       <Section5 />
       <Section6 />
       <Section7 />
+      <Section8 />
       <Footer />
     </div>
   );

@@ -25,10 +25,10 @@ const Footer = () => {
     <footer className="rel w100" role="contentinfo" id="contact">
       <div className="rel">
         <div className="container p20tb p5lr">
-          <div className="w100 rel flex-t flex-auto gap-15-2" style={{ paddingTop: '100px' }}>
-            <div className="foot_block flex-r tac_mobile w33l rel" style={{ paddingRight: '160px' }}>
+          <div className="w100 rel flex-t flex-auto gap-15-2">
+            <div className="foot_block flex-r tac_mobile w33l rel">
               <div>
-                <p style={{ font: '31.9577px "Anek Bangla", sans-serif', color: '#FFFFFF' }}>
+                <p style={{ fontFamily: '"Anek Bangla", sans-serif', fontSize: '20px', fontWeight: 300, color: '#FFFFFF', lineHeight: 1.5 }}>
                   <a
                     href="https://maps.app.goo.gl/Y49bmjVvK1i1TPjD9"
                     title="View on Google Maps"
@@ -43,39 +43,39 @@ const Footer = () => {
 
             <div className="foot_block flex-r tac_mobile w33l rel">
               <div>
-                <p style={{ fontFamily: 'var(--title-font)' }}>
+                <p style={{ fontFamily: '"Anek Bangla", sans-serif', fontSize: '20px', fontWeight: 300, color: '#FFFFFF', lineHeight: 1.5 }}>
                   <a href="tel:+919879337290" title="Chiamaci" rel="noopener">
-                    Tel: <u className="b0">+91 9879337290</u>
+                    Tel: +91 9879337290
                   </a>
                 </p>
-                <p>
+                <p style={{ fontFamily: '"Anek Bangla", sans-serif', fontSize: '20px', fontWeight: 300, color: '#FFFFFF', lineHeight: 1.5 }}>
                   <a href="mailto:jigarinterior@gmail.com" title="Scrivici" rel="noopener">
-                    <u>jigarinterior07@gmail.com</u>
+                    jigarinterior07@gmail.com
                   </a>
                 </p>
               </div>
             </div>
 
-            <div className="foot_block flex tac_mobile w33l rel" style={{ paddingLeft: '160px' }}>
+            <div className="foot_block flex tac_mobile w33l rel">
               <div>
-                <p style={{ font: '31.9577px "Anek Bangla", sans-serif', color: '#FFFFFF' }}>
+                <p style={{ fontFamily: '"Anek Bangla", sans-serif', fontSize: '20px', fontWeight: 300, color: '#FFFFFF', lineHeight: 1.5 }}>
                   <a
                     href="#"
                     title="Seguici su Facebook"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <u>Facebook</u>
+                    Facebook
                   </a>
                 </p>
-                <p style={{ font: '31.9577px "Anek Bangla", sans-serif', color: '#FFFFFF' }}>
+                <p style={{ fontFamily: '"Anek Bangla", sans-serif', fontSize: '20px', fontWeight: 300, color: '#FFFFFF', lineHeight: 1.5 }}>
                   <a
                     href="https://www.instagram.com/jigar_interior?igsi=dHNiZ3Vjdjl2cTNl"
                     title="Seguici su Instagram"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <u>Instagram</u>
+                    Instagram
                   </a>
                 </p>
               </div>
@@ -138,7 +138,7 @@ const Footer = () => {
             title="THE Studio"
             id="credits_studio"
           >
-            THE Studio
+            DEV JANGID
           </a>
         </p>
       </div>

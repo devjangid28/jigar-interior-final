@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import './Section6.css';
 
 const h2Lines = [
-  'From concept to emotion: ',
-  'architecture executed to ',
-  'perfection',
+  'From the concept',
+  'to the emotion:',
+  'the architecture performed',
+  'according to the rules of the art',
 ];
 
 const ArrowSvg = () => (
@@ -91,7 +92,7 @@ const Section6 = () => {
             ))}
           </h2>
 
-          <p className="p_anek">Tecnoarreda Interior Design was created to transform the concept of architecture into a complete, elegant, and tailor-made experience, combining technical and qualified expertise with artisanal mastery.</p>
+          <p className="p_anek">Tecnoarreda Interior Design was created to transform the concept of architecture into a complete, elegant, and customized experience, combining technical and qualified know-how with artisanal mastery.</p>
 
           {/* Second image with arrow */}
           <div className="sec_img sec_trigger toLeft w100 flex-r flex-wrap m15t rel">
@@ -104,7 +105,7 @@ const Section6 = () => {
             <div className="wrp_freccetta bottom left_basso">
               <div className="freccia_box _desktop">
                 <FrecciaSvg />
-                <p>EVERY detail is A HALLMARK OF EXCELLENCE</p>
+                <p>EVERY detail is a signature of excellence</p>
               </div>
             </div>
           </div>

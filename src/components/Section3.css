@@ -52,8 +52,26 @@
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ H1 TYPOGRAPHY ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 /* Reference index.css already defines h1,.h1 base styles */
 
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ MOBILE (max-width: 1023px) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+@media screen and (max-width: 1023px) {
+
+  .w35l { width: 100%; }
+
+  #s3_home .container {
+    display: block;
+    min-height: auto;
+    padding-top: 8vw;
+  }
+
+  .sec_img.to_big {
+    width: 100%;
+  }
+}
+
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ (from custom.css) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 @media screen and (min-width: 1024px) {
+
+  .w35l { width: 35%; }
 
   .s3_pin_wrapper {
     height: 250vh;

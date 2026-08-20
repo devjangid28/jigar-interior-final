@@ -212,7 +212,7 @@ picture > img { width: 100%; height: 100%; object-fit: cover; }
 @media screen and (min-width: 1024px) {
 
   .w40l { width: 40%; }
-  .w55l { width: 55%; }
+  .w55l { width: 55%; margin-bottom: 60px; }
 
   .wrp_freccetta { position: absolute; z-index: 1; }
 

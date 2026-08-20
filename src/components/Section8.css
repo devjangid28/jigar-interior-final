@@ -1,0 +1,182 @@
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+/* SECTION 8 - Contact Form */
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ UTILITY CLASSES ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.p15t { padding-top: 15vh; }
+.w50m { width: 100%; }
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SECTION 8 MOBILE ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+#sec_form {
+  width: 100%;
+}
+
+#sec_form .container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+}
+
+#sec_form .container.flex-t {
+  flex-direction: column;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ TEXT COLUMN ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s8_h3 {
+  font-family: var(--title-font);
+  font-size: var(--h2-size, 3.5rem);
+  line-height: 1.1;
+  font-weight: 100;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ FORM FIELDS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s8_fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.s8_field {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 0 0.4rem;
+}
+
+.s8_field label {
+  font-family: "Anek Bangla", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.s8_required {
+  color: #c0392b;
+}
+
+.s8_field input[type="text"],
+.s8_field input[type="email"],
+.s8_field input[type="tel"],
+.s8_field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--white);
+  font-family: "Anek Bangla", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  padding: 0.5rem 0 0.8rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.s8_field input:focus,
+.s8_field textarea:focus {
+  border-bottom-color: var(--white);
+}
+
+.s8_field textarea {
+  resize: vertical;
+  min-height: 3rem;
+}
+
+.s8_field_full {
+  width: 100%;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ CHECKBOX ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s8_checkbox_field {
+  margin-top: 0.5rem;
+}
+
+.s8_checkbox_label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.s8_checkbox_label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--white);
+  cursor: pointer;
+}
+
+.s8_checkbox_label a {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SUBMIT BUTTON ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s8_submit_wrap {
+  margin-top: 1.5rem;
+}
+
+.s8_submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-family: "Anek Bangla", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.3s;
+}
+
+.s8_submit svg {
+  height: 0.85rem;
+  width: auto;
+}
+
+.s8_submit svg path {
+  fill: var(--white);
+}
+
+.s8_submit svg:nth-of-type(1) {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate3d(-100%, -100%, 0);
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.52, 0, 0, 1), opacity 0.7s cubic-bezier(0.52, 0, 0, 1);
+}
+
+.s8_submit:hover span {
+  transform: translateX(1.5rem);
+}
+
+.s8_submit:hover svg:nth-of-type(2) {
+  transform: translate3d(110%, 85%, 0);
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.52, 0, 0, 1), opacity 0.7s cubic-bezier(0.52, 0, 0, 1);
+}
+
+.s8_submit:hover svg:nth-of-type(1) {
+  transform: translate3d(0, -50%, 0);
+  opacity: 1;
+}
+
+.s8_submit span {
+  transition: transform 0.7s cubic-bezier(0.52, 0, 0, 1);
+}
+
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+@media screen and (min-width: 1024px) {
+  #sec_form {
+    display: none;
+  }
+}

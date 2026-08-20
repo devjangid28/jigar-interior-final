@@ -151,10 +151,11 @@
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 @media screen and (max-width: 1023px) {
+  #sec_2 .flex-t { flex-direction: column; }
   .wrp_freccetta.bottom { transform: none; }
   .wrp_freccetta p { width: auto; max-width: 80vw; font-size: 1rem; }
   #sec_2 .wrp_freccetta p { transform: none; }
-  .firma { width: 8rem; transform: none; }
+  .firma { width: 11rem; bottom: 0; right: 0; transform: translate(5%, 40%); }
   .img_hover { width: 12rem; }
 }
 

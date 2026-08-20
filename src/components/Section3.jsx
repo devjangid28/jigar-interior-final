@@ -85,7 +85,7 @@ const Section3 = () => {
                 alt="Pool inside the villa"
               />
             </picture>
-            <div className="filter filter_bt anim" ref={filterRef} style={{ opacity: 0 }}></div>
+            <div className="filter filter_bt anim" ref={filterRef} style={{ opacity: isDesktop ? 0 : 1 }}></div>
             <h2 className="h1 text_enter" ref={textRef}>Balance of forms</h2>
           </div>
         </div>

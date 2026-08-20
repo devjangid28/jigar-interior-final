@@ -232,28 +232,30 @@ const Section7 = () => {
       <div className="container">
 
         {/* MOBILE: Swiper gallery */}
-        <div className="s7_mobile p10tb p5lr" ref={mobileSliderRef}>
-          <div className="s7_text textAnim tac_mobile rel w100">
-            <h2 className="h1">PROJECTS</h2>
+        <div className="w100 mobile p10tb p5lr" ref={mobileSliderRef}>
+          <div className="text textAnim tac_mobile rel w100">
+            <h2 className="h1">ACHIEVEMENTS</h2>
           </div>
 
-          <div className="s7_swiper_wrap rel w100 m7t">
-            <div className="s7_swiper_track" ref={mobileTrackRef}>
-              {projects.map((project) => (
-                <div
-                  key={project.id}
-                  className="s7_swiper_slide sized rel w100 ratio-3-4"
-                  style={renderMobileSlideStyle(project)}
-                />
-              ))}
+          <div className="w100 rel" id="swiper_gallery">
+            <div className="swiper">
+              <div className="swiper-wrapper" ref={mobileTrackRef}>
+                {projects.map((project) => (
+                  <div
+                    key={project.id}
+                    className="swiper-slide sized rel ratio-3-4"
+                    style={renderMobileSlideStyle(project)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="s7_nav_dots">
+          <div id="nav_dots">
             {projects.map((project, i) => (
               <button
                 key={project.id}
-                className={`s7_dot ${i === activeSlide ? 'active' : ''}`}
+                className={`swiper-pagination-bullet ${i === activeSlide ? 'swiper-pagination-bullet-active' : ''}`}
                 onClick={() => goToSlide(i)}
                 aria-label={`Go to slide ${i + 1}`}
               />
@@ -262,7 +264,7 @@ const Section7 = () => {
         </div>
 
         {/* DESKTOP: Horizontal scroll */}
-        <div className="s7_desktop p10tb" id="wrapper_scroll_orizzontale" ref={wrapperRef}>
+        <div className="desktop p10tb" id="wrapper_scroll_orizzontale" ref={wrapperRef}>
 
           <div className="s7_sec_img s7_img_0">
             <picture className="w100 rel ratio-3-4">
@@ -276,7 +278,7 @@ const Section7 = () => {
           </div>
 
           <div className="s7_text textAnim rel">
-            <h2 className="h1">PROJECTS</h2>
+            <h2 className="h1">ACHIEVEMENTS</h2>
           </div>
 
           {projects.slice(1).map((project) => (

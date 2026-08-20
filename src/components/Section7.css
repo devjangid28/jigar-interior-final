@@ -14,39 +14,39 @@
 }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ MOBILE SECTION ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
-.s7_mobile {
+.mobile {
   display: block;
 }
 
-.s7_desktop {
+.desktop {
   display: none;
 }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ MOBILE SWIPER ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
-.s7_swiper_wrap {
+#swiper_gallery {
   overflow: hidden;
 }
 
-.s7_swiper_track {
+.swiper-wrapper {
   display: flex;
   transition: transform 0.4s ease;
   will-change: transform;
 }
 
-.s7_swiper_slide {
+.swiper-slide {
   flex: 0 0 100%;
   min-width: 0;
   overflow: hidden;
 }
 
-.s7_swiper_slide.sized {
+.swiper-slide.sized {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ MOBILE TEXT ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
-#sec_realizzazioni .s7_text h2 {
+#sec_realizzazioni .text h2 {
   font-family: var(--title-font);
   font-size: var(--h2-size, 3.5rem);
   line-height: 1.1;
@@ -147,7 +147,7 @@
 .textAnim.active p { opacity: 1; transform: translateY(0); }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ SIZED (mobile swiper bg images) ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
-.s7_swiper_slide.sized {
+.swiper-slide.sized {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -155,14 +155,14 @@
 }
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ NAV DOTS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
-.s7_nav_dots {
+#nav_dots {
   display: flex;
   justify-content: center;
   gap: 8px;
   padding: 10px 0;
 }
 
-.s7_dot {
+.swiper-pagination-bullet {
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -173,7 +173,7 @@
   padding: 0;
 }
 
-.s7_dot.active {
+.swiper-pagination-bullet-active {
   background: #fff;
 }
 
@@ -195,11 +195,11 @@
 @media screen and (min-width: 1024px) {
 
   /*∞∞∞∞ SHOW/HIDE ∞∞∞∞*/
-  .s7_mobile { display: none; }
-  .s7_desktop { display: block; }
+  .mobile { display: none; }
+  .desktop { display: block; }
 
   /*∞∞∞∞ SIZED responsive background ∞∞∞∞*/
-  .s7_swiper_slide.sized {
+  .swiper-slide.sized {
     background-image: var(--bkg-medium);
   }
 
@@ -306,13 +306,13 @@
 
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ LARGE SCREENS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 @media screen and (min-width: 1440px) {
-  .s7_swiper_slide.sized {
+  .swiper-slide.sized {
     background-image: var(--bkg-large);
   }
 }
 
 @media screen and (min-width: 1920px) {
-  .s7_swiper_slide.sized {
+  .swiper-slide.sized {
     background-image: var(--bkg-xlarge);
   }
 }
