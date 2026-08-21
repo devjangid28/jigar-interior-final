@@ -130,13 +130,14 @@ const Footer = () => {
           </a>
         </p>
         <p className="tac_mobile" style={{ font: '15px "Anek Bangla", sans-serif', color: '#FFFFFF', paddingRight: '50px' }}>
-          Credits:{' '}
+          Created by:{' '}
           <a
-            href="#"
+            href="https://portfolio-theta-rosy-cv2yj45f9r.vercel.app/"
             rel="noopener noreferrer"
             target="_blank"
-            title="THE Studio"
+            title="Dev Jangid"
             id="credits_studio"
+            style={{ color: '#C9A96E', fontWeight: 600, textDecoration: 'underline', letterSpacing: '0.05em' }}
           >
             DEV JANGID
           </a>
