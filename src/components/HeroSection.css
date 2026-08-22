@@ -375,8 +375,9 @@
     transform-origin: 50% 50%;
   }
 
+  /* Smaller SVG so "J" stays inside viewport (compensates JS base scale 1.1) */
   #HeroLogoText svg {
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(0.9, 0.9, 1);
   }
 
   .widget-landing {
