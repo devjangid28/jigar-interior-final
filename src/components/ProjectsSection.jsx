@@ -1,13 +1,25 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './ProjectsSection.css';
+import ProjectDetail from './ProjectDetail.jsx';
 
 const projects = [
   {
     id: 1,
     num: '1',
     title: ['Master', 'Bedroom'],
-    image: '/bedroom3.jpg',
+    image: '/interior 7.png',
     alt: 'Master Bedroom',
+    images: [
+      '/interior 1.png',
+      '/masterbed room.jpg',
+      '/bedroom1.jpg',
+      '/bedroom2.jpg',
+      '/bedroom3.jpg',
+      '/bedroom4.jpg',
+      '/bedroom5.jpg',
+      '/bedroom6.jpg',
+      '/bedroom7.jpg',
+    ],
   },
   {
     id: 2,
@@ -15,6 +27,12 @@ const projects = [
     title: ['Living', 'Room'],
     image: '/living room.jpg',
     alt: 'Living Room',
+    images: [
+      '/interior 3.png',
+      '/interior 4.png',
+      '/interior 8.png',
+      '/living2.jpg',
+    ],
   },
   {
     id: 3,
@@ -22,6 +40,10 @@ const projects = [
     title: ['TV', 'Units', 'Design'],
     image: '/tv unit design.jpg',
     alt: 'TV Units Design',
+    images: [
+      '/interior 4.png',
+      '/tv2.jpg',
+    ],
   },
   {
     id: 4,
@@ -29,6 +51,10 @@ const projects = [
     title: ['Kitchen', 'Design'],
     image: '/kitchen.jpg',
     alt: 'Kitchen Design',
+    images: [
+      '/kitchen 2.jpg',
+      '/kitchen3.jpg',
+    ],
   },
   {
     id: 5,
@@ -36,6 +62,11 @@ const projects = [
     title: ['Pooja', 'Room'],
     image: '/POOJA ROOM.jpg',
     alt: 'Pooja Room',
+    images: [
+      '/pooja2.jpg',
+      '/pooja3.jpg',
+      '/pooja4.jpg',
+    ],
   },
   {
     id: 6,
@@ -43,6 +74,11 @@ const projects = [
     title: ['Dining', 'Room'],
     image: '/Dining room1.jpg',
     alt: 'Dining Room',
+    images: [
+      '/dinning2.jpg',
+      '/dinning3.jpg',
+      '/dinning4.jpg',
+    ],
   },
   {
     id: 7,
@@ -50,6 +86,9 @@ const projects = [
     title: ['Door', 'Design'],
     image: '/Doordesign.jpg',
     alt: 'Door Design',
+    images: [
+      '/door2.jpg',
+    ],
   },
   {
     id: 8,
@@ -57,11 +96,19 @@ const projects = [
     title: ['Foyer'],
     image: '/foyer.jpg',
     alt: 'Foyer',
+    images: [
+      '/interior 9.png',
+      '/floyer1.jpg',
+      '/floyer2.jpg',
+      '/floyer3.jpg',
+      '/floyer4.jpg',
+    ],
   },
 ];
 
 const ProjectsSection = () => {
   const itemsRef = useRef([]);
+  const [activeProject, setActiveProject] = useState(null);
 
   useEffect(() => {
     let ticking = false;
@@ -150,7 +197,11 @@ const ProjectsSection = () => {
                   <span>/</span>
                   <span>{projects.length}</span>
                 </div>
-                <a href="#" className="proj_btn">
+                <a
+                  href="#"
+                  className="proj_btn"
+                  onClick={(e) => { e.preventDefault(); setActiveProject(project); }}
+                >
                   <span className="proj_btn_text">see project</span>
                 </a>
               </div>
@@ -158,6 +209,14 @@ const ProjectsSection = () => {
           </div>
         ))}
       </div>
+
+      {activeProject && (
+        <ProjectDetail
+          key={activeProject.id}
+          project={activeProject}
+          onClose={() => setActiveProject(null)}
+        />
+      )}
     </section>
   );
 };
