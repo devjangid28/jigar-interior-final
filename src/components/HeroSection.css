@@ -370,8 +370,9 @@
 
   #HeroLogoText {
     left: 2vw;
-    top: calc(50% - 12vw);
-    transform: scale3d(0.6, 0.6, 1);
+    top: 50%;
+    translate: 0 -50%;
+    transform: scale3d(0.45, 0.45, 1);
     transform-origin: 50% 50%;
   }
 

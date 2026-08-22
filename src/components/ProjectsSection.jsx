@@ -6,7 +6,7 @@ const projects = [
     id: 1,
     num: '1',
     title: ['Master', 'Bedroom'],
-    image: '/masterbed room.jpg',
+    image: '/bedroom3.jpg',
     alt: 'Master Bedroom',
   },
   {
