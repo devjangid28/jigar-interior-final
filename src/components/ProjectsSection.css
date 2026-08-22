@@ -41,8 +41,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(1.2);
+  object-fit: contain;
 }
 
 .proj_overlay {
@@ -172,6 +171,10 @@
 }
 
 @media (max-width: 768px) {
+  .proj-img {
+    object-fit: cover;
+  }
+
   .proj_content {
     flex-direction: column;
     justify-content: flex-end;

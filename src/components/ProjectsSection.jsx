@@ -6,21 +6,21 @@ const projects = [
     id: 1,
     num: '1',
     title: ['Master', 'Bedroom'],
-    image: '/master.jpg',
+    image: '/masterbed room.jpg',
     alt: 'Master Bedroom',
   },
   {
     id: 2,
     num: '2',
     title: ['Living', 'Room'],
-    image: '/living.jpg',
+    image: '/living room.jpg',
     alt: 'Living Room',
   },
   {
     id: 3,
     num: '3',
     title: ['TV', 'Units', 'Design'],
-    image: '/tv.jpg',
+    image: '/tv unit design.jpg',
     alt: 'TV Units Design',
   },
   {
@@ -34,15 +34,29 @@ const projects = [
     id: 5,
     num: '5',
     title: ['Pooja', 'Room'],
-    image: '/pooja.jpg',
+    image: '/POOJA ROOM.jpg',
     alt: 'Pooja Room',
   },
   {
     id: 6,
     num: '6',
     title: ['Dining', 'Room'],
-    image: '/dining.jpg',
+    image: '/Dining room1.jpg',
     alt: 'Dining Room',
+  },
+  {
+    id: 7,
+    num: '7',
+    title: ['Door', 'Design'],
+    image: '/Doordesign.jpg',
+    alt: 'Door Design',
+  },
+  {
+    id: 8,
+    num: '8',
+    title: ['Foyer'],
+    image: '/foyer.jpg',
+    alt: 'Foyer',
   },
 ];
 
@@ -66,7 +80,7 @@ const ProjectsSection = () => {
           if (img) {
             const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)));
             const y = (progress - 0.5) * 80;
-            img.style.transform = `translate3d(0px, ${y}px, 0px) scale(1.2, 1.2)`;
+            img.style.transform = `translate3d(0px, ${y}px, 0px)`;
           }
         });
         ticking = false;
