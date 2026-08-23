@@ -10,9 +10,26 @@ const ArrowSvg = () => (
   </svg>
 );
 
+const WHATSAPP_NUMBER = '9879337290';
+
 const Section8 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const data = new FormData(e.target);
+    const get = (field) => (data.get(field) || '').toString().trim();
+
+    const lines = [
+      'New enquiry from website:',
+      `Name: ${get('name')}`,
+      `Surname: ${get('surname')}`,
+      `Email: ${get('email')}`,
+      get('phone') && `Telephone: ${get('phone')}`,
+      get('message') && `Message: ${get('message')}`,
+    ].filter(Boolean);
+
+    const text = encodeURIComponent(lines.join('\n'));
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
   return (

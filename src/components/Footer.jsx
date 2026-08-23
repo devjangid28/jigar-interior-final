@@ -93,41 +93,18 @@ const Footer = () => {
 
       <div className="p10tb p1lr w100 rel" id="credits">
         <p className="tac_mobile" style={{ textAlign: 'left', paddingLeft: '50px', font: '15px "Anek Bangla", sans-serif', color: '#FFFFFF' }}>
-          <span>&copy; 2026&nbsp;Jigar Interior Design srl </span>
+          <span>&copy; 2026&nbsp;Jigar Interior Design</span>
           <span className="resp_sep"> - </span>
           <br />
           <span>Vadodara</span>
           <span className="resp_sep"> - </span>
           <br />
-          <span>Email: jigarinterior@gmail.com - M 9724441259</span>
+          <span>Email: jigarinterior@gmail.com - M 9879337290</span>
           <span className="resp_sep"> - </span>
           <br />
-          <span>For More info. 9724441259 </span>
-          <span className="resp_sep"> - </span>
+          <span>For More info. 8347279789 </span>
           <br />
-          <span>Cap. Soc.50.000&euro; i.v.</span>
           <br style={{ display: 'block' }} />
-          <a
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            title="Privacy Policy"
-          >
-            Privacy Policy
-          </a>
-          &nbsp;-&nbsp;
-          <a
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            title="Cookie Policy"
-          >
-            Cookie Policy
-          </a>
-          &nbsp;-&nbsp;
-          <a href="#" title="Privacy preferences">
-            Privacy preferences
-          </a>
         </p>
         <p className="tac_mobile" style={{ font: '15px "Anek Bangla", sans-serif', color: '#FFFFFF', paddingRight: '50px' }}>
           Created by:{' '}
