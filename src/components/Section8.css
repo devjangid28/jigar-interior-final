@@ -217,4 +217,45 @@
   #sec_form {
     display: block;
   }
+
+  #sec_form .container.flex-t {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0;
+  }
+
+  #sec_form .s8_text {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  #sec_form .s8_tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #sec_form .s8_whatsapp_hint {
+    text-align: center;
+  }
+
+  #sec_form #form {
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #sec_form .s8_field label {
+    text-align: left;
+  }
+
+  #sec_form .s8_field_full {
+    text-align: left;
+  }
+
+  #sec_form .s8_submit_wrap {
+    display: flex;
+    justify-content: center;
+  }
 }
