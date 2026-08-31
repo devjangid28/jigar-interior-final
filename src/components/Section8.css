@@ -32,6 +32,44 @@
   margin-bottom: 1.5rem;
 }
 
+/*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ TAGLINE & HINT ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
+.s8_tagline {
+  font-family: "Anek Bangla", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  max-width: 26rem;
+}
+
+.s8_whatsapp_hint {
+  margin-top: 1rem;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 1.05rem;
+  color: #c9a96e;
+}
+
+.s8_whatsapp_hint a {
+  color: #c9a96e;
+  text-decoration: underline;
+}
+
+.s8_error {
+  margin-top: 0.9rem;
+  font-family: "Anek Bangla", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #e08b7d;
+}
+
+.s8_success {
+  margin-top: 0.9rem;
+  font-family: "Anek Bangla", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #a8cbb0;
+}
+
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ FORM FIELDS ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 .s8_fields {
   display: flex;
@@ -177,6 +215,6 @@
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞ DESKTOP 1024px+ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 @media screen and (min-width: 1024px) {
   #sec_form {
-    display: none;
+    display: block;
   }
 }
