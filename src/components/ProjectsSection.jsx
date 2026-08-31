@@ -49,10 +49,10 @@ const projects = [
     id: 4,
     num: '4',
     title: ['Kitchen', 'Design'],
-    image: '/kitchen.jpg',
+    image: '/kitchen 2.jpg',
     alt: 'Kitchen Design',
     images: [
-      '/kitchen 2.jpg',
+      '/kitchen.jpg',
       '/kitchen3.jpg',
     ],
   },

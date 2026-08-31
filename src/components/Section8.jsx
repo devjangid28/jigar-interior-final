@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Section8.css';
 
-const WHATSAPP_NUMBER = '919879337290';
+const WHATSAPP_NUMBER = '9879337290';
 
 const ArrowSvg = () => (
   <svg x="0px" y="0px" viewBox="0 0 99.9 99.9" xmlSpace="preserve">
