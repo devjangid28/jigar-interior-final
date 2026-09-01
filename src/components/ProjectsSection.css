@@ -200,6 +200,6 @@
 
   .proj_title h3 {
     font-size: clamp(2rem, 10vw, 3rem);
-    padding-top: 35px;
+    padding-top: 50px;
   }
 }

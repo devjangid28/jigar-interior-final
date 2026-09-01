@@ -6,6 +6,7 @@ import logo from '/logo.PNG';
 const HeroSection = () => {
   const [isActive, setIsActive] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const mediaBgRef = useRef(null);
   const heroRef = useRef(null);
   const heroLogoRef = useRef(null);
@@ -21,6 +22,7 @@ const HeroSection = () => {
     const mediaBg = mediaBgRef.current;
     const heroLogo = heroLogoRef.current;
     const logo = document.querySelector('#Header > .logo');
+    const pillLogo = document.querySelector('.navbar-pill__logo');
     if (!hero) return;
 
     let ticking = false;
@@ -81,6 +83,15 @@ const HeroSection = () => {
           logo.style.opacity = logoOpacity;
         }
 
+        // Also fade in the pill logo on mobile
+        if (pillLogo) {
+          const pillLogoOpacity = t > 0.5 ? (t - 0.5) / 0.5 : 0;
+          pillLogo.style.opacity = pillLogoOpacity;
+        }
+
+        // Toggle scrolled state for the navbar pill color transition
+        setScrolled(scrollProgress > 0.5);
+
         ticking = false;
       });
     };
@@ -120,12 +131,11 @@ const HeroSection = () => {
             </svg>
             <span>Tell us</span>
           </a>
-          <button className="Header__toggle button-round --outline --invert" onClick={handleToggleMenu} aria-label="Menu" role="menuitem">
-            <svg viewBox="0 0 16 16" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 3.25c-3.22 0-6.15 1.78-7.63 4.64l-.06.12.06.12c1.49 2.86 4.41 4.63 7.63 4.63s6.14-1.77 7.63-4.63l.06-.12-.06-.12A8.568 8.568 0 008 3.25zm0 9C5.01 12.25 2.29 10.63.87 8 2.28 5.37 5 3.75 8 3.75S13.71 5.38 15.13 8A8.092 8.092 0 018 12.25z" fill="currentColor"/>
-              <path d="M8 5.5a2.5 2.5 0 000 5 2.5 2.5 0 000-5zM8 10c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="currentColor"/>
-            </svg>
-            <span>Menu</span>
+          <button className={`Header__toggle ${menuOpen ? 'is-active' : ''}`} onClick={handleToggleMenu} aria-label="Toggle menu" role="menuitem">
+            <span className="hamburger">
+              <span className="hamburger__bar"></span>
+              <span className="hamburger__bar"></span>
+            </span>
           </button>
         </nav>
         <a href="https://wa.me/919879337290" target="_blank" rel="noopener noreferrer" className="header__whatsapp button-round --outline --invert" aria-label="Tell us on WhatsApp">
@@ -136,23 +146,49 @@ const HeroSection = () => {
         </a>
       </header>
 
-      {menuOpen && (
-        <div className="mobile-menu" onClick={(e) => {
-          if (e.target === e.currentTarget) setMenuOpen(false);
-        }}>
-          <div className="mobile-menu__inner">
-            <a className="mobile-menu__link" href="#sec_realizzazioni" onClick={() => setMenuOpen(false)}>Projects</a>
-            <a className="mobile-menu__link" href="#sec_servizi" onClick={() => setMenuOpen(false)}>Services</a>
-            <a className="mobile-menu__link" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-            <a href="https://wa.me/919879337290" target="_blank" rel="noopener noreferrer" className="mobile-menu__link mobile-menu__whatsapp" aria-label="Tell us on WhatsApp">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              <span>Tell us</span>
-            </a>
-          </div>
+      {/* Mobile pill navbar — Fitouter style */}
+      <div className={`navbar-pill ${menuOpen ? 'is-open' : ''} ${scrolled ? 'is-scrolled' : ''}`}>
+        <div className="navbar-pill__top">
+          <a href="/" className="navbar-pill__logo" aria-label="Jigar Interiors">
+            <img src={logo} alt="Jigar Interiors" />
+          </a>
+          <button
+            className={`navbar-pill__hamburger ${menuOpen ? 'is-active' : ''}`}
+            onClick={handleToggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span className="navbar-pill__bar"></span>
+            <span className="navbar-pill__bar"></span>
+          </button>
         </div>
-      )}
+        <div className="navbar-pill__menu">
+          <a className="navbar-pill__link" href="#sec_realizzazioni" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a className="navbar-pill__link" href="#sec_servizi" onClick={() => setMenuOpen(false)}>Services</a>
+          <a className="navbar-pill__link" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="https://wa.me/919879337290" target="_blank" rel="noopener noreferrer" className="navbar-pill__tellus" aria-label="Tell us on WhatsApp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>Tell us</span>
+          </a>
+        </div>
+      </div>
+
+      <div className={`mobile-menu ${menuOpen ? 'is-visible' : ''}`} onClick={(e) => {
+        if (e.target === e.currentTarget) setMenuOpen(false);
+      }}>
+        <div className="mobile-menu__inner">
+          <a className="mobile-menu__link" href="#sec_realizzazioni" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a className="mobile-menu__link" href="#sec_servizi" onClick={() => setMenuOpen(false)}>Services</a>
+          <a className="mobile-menu__link" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="https://wa.me/919879337290" target="_blank" rel="noopener noreferrer" className="mobile-menu__link mobile-menu__whatsapp" aria-label="Tell us on WhatsApp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>Tell us</span>
+          </a>
+        </div>
+      </div>
 
       <SideMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
