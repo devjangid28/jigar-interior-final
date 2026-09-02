@@ -216,6 +216,8 @@
     padding: 10vw 0 18vw;
     overflow: hidden;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
   }
 
   .collage-heading {
@@ -253,6 +255,10 @@
   }
 
   /* Base card image style - positioning/size handled inline */
+  .collage-stage div {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   .collage-stage div img {
     display: block;
     width: 100%;
