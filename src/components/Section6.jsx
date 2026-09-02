@@ -92,7 +92,7 @@ const Section6 = () => {
             ))}
           </h2>
 
-          <p className="p_anek">Tecnoarreda Interior Design was created to transform the concept of architecture into a complete, elegant, and customized experience, combining technical and qualified know-how with artisanal mastery.</p>
+          <p className="p_anek">Jigar Interior Design was created to transform the concept of architecture into a complete, elegant, and customized experience, combining technical and qualified know-how with artisanal mastery.</p>
 
           {/* Second image with arrow */}
           <div className="sec_img sec_trigger toLeft w100 flex-r flex-wrap m15t rel">
