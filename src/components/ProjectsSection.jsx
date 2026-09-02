@@ -106,6 +106,101 @@ const projects = [
   },
 ];
 
+const collageImages = [
+  { src: '/living room.jpg', alt: 'Living Room' },
+  { src: '/interior 7.png', alt: 'Master Bedroom' },
+  { src: '/kitchen 2.jpg', alt: 'Kitchen Design' },
+  { src: '/POOJA ROOM.jpg', alt: 'Pooja Room' },
+  { src: '/Dining room1.jpg', alt: 'Dining Room' },
+];
+
+// slot definitions matching Framer exactly
+// slot 0 = left  (rotate -20deg, small, behind-left)
+// slot 1 = center (full size, front)
+// slot 2 = right (rotate +20deg, small, behind-right)
+// slot 3 = hidden off-screen left
+// slot 4 = hidden off-screen right
+const getSlotStyle = (slot) => {
+  const base = 'position:absolute; overflow:hidden; transition: all 0.6s cubic-bezier(0.16,1,0.3,1); will-change: transform;';
+  switch (slot) {
+    case 0: return { top:'18%', left:'-28%', width:'50%', height:'65%', borderRadius:'32px', transform:'rotate(-20deg)', zIndex:1, opacity:1 };
+    case 1: return { top:'0',   left:'0',    width:'100%',height:'100%',borderRadius:'44px', transform:'none',           zIndex:3, opacity:1 };
+    case 2: return { top:'18%', left:'78%',  width:'50%', height:'65%', borderRadius:'32px', transform:'rotate(20deg)',  zIndex:1, opacity:1 };
+    default: return { top:'18%', left:'50%',  width:'50%', height:'65%', borderRadius:'32px', transform:'rotate(0deg)',   zIndex:0, opacity:0 };
+  }
+};
+
+const CollageCards = () => {
+  const n = collageImages.length;
+  // slotOf[i] = which slot image i currently occupies
+  // start: image 0 → slot 1 (center), image 1 → slot 2 (right), image 4 → slot 0 (left), rest hidden
+  const [slotOf, setSlotOf] = useState(() => {
+    const s = new Array(n).fill(99);
+    s[0] = 1; // center
+    s[1] = 2; // right
+    s[n - 1] = 0; // left
+    return s;
+  });
+
+  const handleTap = () => {
+    setSlotOf((prev) => {
+      const next = [...prev];
+      // find who is in each slot
+      const centerIdx = prev.indexOf(1);
+      const rightIdx  = prev.indexOf(2);
+      const leftIdx   = prev.indexOf(0);
+      // find the next image after rightIdx
+      const newRightIdx = (rightIdx + 1) % n;
+
+      // animate: center→left, right→center, left→hidden, newRight→right
+      next[centerIdx] = 0;        // center goes to left
+      next[rightIdx]  = 1;        // right comes to center
+      next[leftIdx]   = 99;       // old left hides
+      next[newRightIdx] = 2;      // new image enters from right
+      return next;
+    });
+  };
+
+  return (
+    <div className="collage-wrap" onClick={handleTap}>
+      <div className="collage-heading">
+        <h2>TURNKEY SOLUTIONS</h2>
+        <p>Your Space, Fully Transformed.</p>
+      </div>
+      <div className="collage-stage">
+        {collageImages.map((img, i) => {
+          const s = getSlotStyle(slotOf[i]);
+          return (
+            <div
+              key={img.src}
+              style={{
+                position: 'absolute',
+                top: s.top,
+                left: s.left,
+                width: s.width,
+                height: s.height,
+                borderRadius: s.borderRadius,
+                transform: s.transform,
+                transformOrigin: '50% 50%',
+                zIndex: s.zIndex,
+                opacity: s.opacity,
+                overflow: 'hidden',
+                transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)',
+                willChange: 'transform',
+              }}
+            >
+              <img src={img.src} alt={img.alt} draggable={false} />
+            </div>
+          );
+        })}
+      </div>
+      <div className="collage-btn-wrap" onClick={(e) => e.stopPropagation()}>
+        <a href="/all-projects" className="collage-show-btn">show all</a>
+      </div>
+    </div>
+  );
+};
+
 const ProjectsSection = () => {
   const itemsRef = useRef([]);
   const [activeProject, setActiveProject] = useState(null);
@@ -209,6 +304,8 @@ const ProjectsSection = () => {
           </div>
         ))}
       </div>
+
+      <CollageCards />
 
       {activeProject && (
         <ProjectDetail

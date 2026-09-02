@@ -170,6 +170,11 @@
   z-index: 1;
 }
 
+/* Collage - hidden on desktop */
+.collage-wrap {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .proj-img {
     object-fit: cover;
@@ -201,5 +206,87 @@
   .proj_title h3 {
     font-size: clamp(2rem, 10vw, 3rem);
     padding-top: 50px;
+  }
+
+  /* Collage - mobile only */
+  .collage-wrap {
+    display: block;
+    width: 100%;
+    background: var(--black);
+    padding: 10vw 0 18vw;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .collage-heading {
+    text-align: center;
+    padding: 0 6% 8vw;
+  }
+
+  .collage-heading h2 {
+    font-family: var(--title-font);
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+    font-weight: 400;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin: 0 0 0.4em;
+  }
+
+  .collage-heading p {
+    font-family: var(--ad-font-sans);
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    color: var(--grey);
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+
+  /* Stage is sized to the center card and centered */
+  .collage-stage {
+    position: relative;
+    width: 62vw;
+    height: 78vw;
+    margin: 0 auto;
+    /* allow side cards to overflow the stage bounds */
+    overflow: visible;
+  }
+
+  /* Base card image style - positioning/size handled inline */
+  .collage-stage div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+  }
+
+  .collage-btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vw;
+  }
+
+  .collage-show-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2.4rem;
+    border: 1px solid var(--white);
+    border-radius: 50px;
+    color: var(--white);
+    font-family: var(--ad-font-sans);
+    font-size: 0.85rem;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .collage-show-btn:active {
+    background: var(--white);
+    color: var(--black);
   }
 }
