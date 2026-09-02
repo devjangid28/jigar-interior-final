@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     num: '1',
     title: ['Master', 'Bedroom'],
-    image: '/interior 7.png',
+    image: '/master.webp',
     alt: 'Master Bedroom',
     images: [
       '/interior 1.png',
@@ -25,7 +25,7 @@ const projects = [
     id: 2,
     num: '2',
     title: ['Living', 'Room'],
-    image: '/living room.jpg',
+    image: '/living.webp',
     alt: 'Living Room',
     images: [
       '/interior 3.png',
@@ -38,7 +38,7 @@ const projects = [
     id: 3,
     num: '3',
     title: ['TV', 'Units', 'Design'],
-    image: '/tv unit design.jpg',
+    image: '/tv.webp',
     alt: 'TV Units Design',
     images: [
       '/interior 4.png',
@@ -49,7 +49,7 @@ const projects = [
     id: 4,
     num: '4',
     title: ['Kitchen', 'Design'],
-    image: '/kitchen 2.jpg',
+    image: '/kitchen.webp',
     alt: 'Kitchen Design',
     images: [
       '/kitchen.jpg',
@@ -60,7 +60,7 @@ const projects = [
     id: 5,
     num: '5',
     title: ['Pooja', 'Room'],
-    image: '/POOJA ROOM.jpg',
+    image: '/mandir.webp',
     alt: 'Pooja Room',
     images: [
       '/pooja2.jpg',
@@ -72,7 +72,7 @@ const projects = [
     id: 6,
     num: '6',
     title: ['Dining', 'Room'],
-    image: '/Dining room1.jpg',
+    image: '/dinning.webp',
     alt: 'Dining Room',
     images: [
       '/dinning2.jpg',
@@ -84,7 +84,7 @@ const projects = [
     id: 7,
     num: '7',
     title: ['Door', 'Design'],
-    image: '/Doordesign.jpg',
+    image: '/door.webp',
     alt: 'Door Design',
     images: [
       '/door2.jpg',
@@ -94,7 +94,7 @@ const projects = [
     id: 8,
     num: '8',
     title: ['Foyer'],
-    image: '/foyer.jpg',
+    image: '/foyer.webp',
     alt: 'Foyer',
     images: [
       '/interior 9.png',
@@ -107,11 +107,11 @@ const projects = [
 ];
 
 const collageImages = [
-  { src: '/living room.jpg', alt: 'Living Room' },
-  { src: '/interior 7.png', alt: 'Master Bedroom' },
-  { src: '/kitchen 2.jpg', alt: 'Kitchen Design' },
-  { src: '/POOJA ROOM.jpg', alt: 'Pooja Room' },
-  { src: '/Dining room1.jpg', alt: 'Dining Room' },
+  { src: '/living.webp', alt: 'Living Room' },
+  { src: '/master.webp', alt: 'Master Bedroom' },
+  { src: '/kitchen.webp', alt: 'Kitchen Design' },
+  { src: '/mandir.webp', alt: 'Pooja Room' },
+  { src: '/dinning.webp', alt: 'Dining Room' },
 ];
 
 // slot definitions matching Framer exactly
