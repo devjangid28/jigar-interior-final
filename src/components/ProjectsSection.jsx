@@ -7,7 +7,8 @@ const projects = [
     id: 1,
     num: '1',
     title: ['Master', 'Bedroom'],
-    image: '/master.webp',
+    image: '/Bedroom D.jpg',
+    mobileImage: '/bedroom M.jpg',
     alt: 'Master Bedroom',
     images: [
       '/interior 1.png',
@@ -25,7 +26,7 @@ const projects = [
     id: 2,
     num: '2',
     title: ['Living', 'Room'],
-    image: '/living.webp',
+    image: '/living D.jpg',
     alt: 'Living Room',
     images: [
       '/interior 3.png',
@@ -38,7 +39,8 @@ const projects = [
     id: 3,
     num: '3',
     title: ['TV', 'Units', 'Design'],
-    image: '/tv.webp',
+    image: '/Tv D.jpg',
+    mobileImage: '/Tv M.jpg',
     alt: 'TV Units Design',
     images: [
       '/interior 4.png',
@@ -49,7 +51,8 @@ const projects = [
     id: 4,
     num: '4',
     title: ['Kitchen', 'Design'],
-    image: '/kitchen.webp',
+    image: '/kitchen D.jpg',
+    mobileImage: '/Kitchen M.jpg',
     alt: 'Kitchen Design',
     images: [
       '/kitchen.jpg',
@@ -72,7 +75,7 @@ const projects = [
     id: 6,
     num: '6',
     title: ['Dining', 'Room'],
-    image: '/dinning.webp',
+    image: '/Dinning D.jpg',
     alt: 'Dining Room',
     images: [
       '/dinning2.jpg',
@@ -84,7 +87,7 @@ const projects = [
     id: 7,
     num: '7',
     title: ['Door', 'Design'],
-    image: '/door.webp',
+    image: '/Room D.jpg',
     alt: 'Door Design',
     images: [
       '/door2.jpg',
@@ -107,11 +110,11 @@ const projects = [
 ];
 
 const collageImages = [
-  { src: '/living.webp', alt: 'Living Room' },
-  { src: '/master.webp', alt: 'Master Bedroom' },
-  { src: '/kitchen.webp', alt: 'Kitchen Design' },
-  { src: '/mandir.webp', alt: 'Pooja Room' },
-  { src: '/dinning.webp', alt: 'Dining Room' },
+  { src: '/living D.jpg', mobileSrc: '/living.webp', alt: 'Living Room' },
+  { src: '/Bedroom D.jpg', mobileSrc: '/bedroom M.jpg', alt: 'Master Bedroom' },
+  { src: '/kitchen D.jpg', mobileSrc: '/Kitchen M.jpg', alt: 'Kitchen Design' },
+  { src: '/mandir.webp', mobileSrc: '/mandir.webp', alt: 'Pooja Room' },
+  { src: '/Dinning D.jpg', mobileSrc: '/dinning.webp', alt: 'Dining Room' },
 ];
 
 // slot definitions matching Framer exactly
@@ -130,7 +133,7 @@ const getSlotStyle = (slot) => {
   }
 };
 
-const CollageCards = () => {
+const CollageCards = ({ isMobile }) => {
   const n = collageImages.length;
   // slotOf[i] = which slot image i currently occupies
   // start: image 0 → slot 1 (center), image 1 → slot 2 (right), image 4 → slot 0 (left), rest hidden
@@ -189,7 +192,7 @@ const CollageCards = () => {
                 willChange: 'transform',
               }}
             >
-              <img src={img.src} alt={img.alt} draggable={false} />
+              <img src={isMobile ? img.mobileSrc : img.src} alt={img.alt} draggable={false} />
             </div>
           );
         })}
@@ -204,6 +207,13 @@ const CollageCards = () => {
 const ProjectsSection = () => {
   const itemsRef = useRef([]);
   const [activeProject, setActiveProject] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     let ticking = false;
@@ -265,7 +275,7 @@ const ProjectsSection = () => {
             <figure className="proj_visual">
               <div className="proj_bg"></div>
               <img
-                src={project.image}
+                src={isMobile && project.mobileImage ? project.mobileImage : project.image}
                 loading="lazy"
                 alt={project.alt}
                 className="proj-img"
@@ -305,7 +315,7 @@ const ProjectsSection = () => {
         ))}
       </div>
 
-      <CollageCards />
+      <CollageCards isMobile={isMobile} />
 
       {activeProject && (
         <ProjectDetail
