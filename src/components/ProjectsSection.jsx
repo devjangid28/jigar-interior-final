@@ -27,6 +27,7 @@ const projects = [
     num: '2',
     title: ['Living', 'Room'],
     image: '/living D.jpg',
+    mobileImage: '/living.webp',
     alt: 'Living Room',
     images: [
       '/interior 3.png',
@@ -76,6 +77,7 @@ const projects = [
     num: '6',
     title: ['Dining', 'Room'],
     image: '/Dinning D.jpg',
+    mobileImage: '/dinning.webp',
     alt: 'Dining Room',
     images: [
       '/dinning2.jpg',
@@ -88,6 +90,7 @@ const projects = [
     num: '7',
     title: ['Door', 'Design'],
     image: '/Room D.jpg',
+    mobileImage: '/door.webp',
     alt: 'Door Design',
     images: [
       '/door2.jpg',
