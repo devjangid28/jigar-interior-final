@@ -211,7 +211,7 @@ const HeroSection = () => {
             preload="auto"
           >
             <source src="/mobilehero.mp4" type="video/mp4" media="(max-width: 768px), (pointer: coarse) and (orientation: portrait)" />
-            <source src="/hero.mp4" type="video/mp4" />
+            <source src="/H Video D.mp4" type="video/mp4" />
           </video>
         </figure>
 
