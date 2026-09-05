@@ -57,17 +57,21 @@ const HeroSection = () => {
         if (heroLogo) {
           // Scale: 1.1 â†’ 0.12 (header size)
           const svgScale = 1.1 - t * (0.9 - 0.12);
-          // Opacity: fade out in last 30%
-          const opacity = t > 0.7 ? 1 - ((t - 0.7) / 0.3) : 1;
 
           const vw = window.innerWidth;
           const vh = window.innerHeight;
           const isMobile = vw <= 480;
 
+          let opacity = t > 0.7 ? 1 - ((t - 0.7) / 0.3) : 1;
+
           if (isMobile) {
-            const translateX = -t * vw * 0.3;
-            const translateY = -t * vh * 0.35;
+            // Buttery-smooth mobile animation: ease-out (decelerating) movement
+            // plus a gentle, continuous fade so the text never feels "stuck".
+            const ease = 1 - Math.pow(1 - t, 3);
+            const translateX = -ease * vw * 0.3;
+            const translateY = -ease * vh * 0.35;
             heroLogo.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) scale3d(${svgScale}, ${svgScale}, 1)`;
+            opacity = Math.pow(1 - t, 1.6);
           } else {
             const translateX = -t * vw * 0.1;
             const translateY = -t * vh * 0.25;
