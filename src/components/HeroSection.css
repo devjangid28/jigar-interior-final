@@ -436,7 +436,7 @@
   .widget-landing > .caption p { font-size: .75rem; }
 }
 
-  /* ── Top row: Logo | Hamburger ─────────────────────────── */
+  /* ── Top row: Logo | Actions (hamburger / WhatsApp) ────── */
   .navbar-pill__top {
     display: flex;
     align-items: center;
@@ -444,6 +444,65 @@
     padding: 12px 24px;
     position: relative;
     z-index: 2;
+  }
+
+  /* Actions container — holds the rotating button (fixed size so overlap works) */
+  .navbar-pill__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 108px;
+    height: 24px;
+    position: relative;
+  }
+
+  /* WhatsApp button in pill top row — always rendered, cross-fades via .is-visible */
+  .navbar-pill__whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5em;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) translateX(8px) scale(0.96);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .navbar-pill__whatsapp-btn.is-visible {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .navbar-pill__whatsapp-btn span {
+    font-family: var(--ad-font-sans, "FKGrotesk-Regular", sans-serif);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1;
+    transition: color 0.5s ease;
+  }
+
+  .navbar-pill__whatsapp-btn svg {
+    fill: #25D366;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: fill 0.5s ease;
+  }
+
+  .navbar-pill.is-scrolled .navbar-pill__whatsapp-btn span {
+    color: #1a1a1e;
   }
 
   /* Logo — wide landscape (905×276), natural aspect ratio,
@@ -478,8 +537,19 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
     flex-shrink: 0;
+    opacity: 1;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .navbar-pill__hamburger.is-hidden {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-8px) scale(0.96);
+    pointer-events: none;
   }
 
   .navbar-pill__bar {
