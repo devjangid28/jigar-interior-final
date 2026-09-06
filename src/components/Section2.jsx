@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import './Section2.css';
 
 const textLines = [
-  'Home is more than a place: it is ',
-  'emotion, sensations, a ',
-  'reflection of those who live it. Every ',
-  'space can transform into ',
-  'a work of art, where luxury, ',
-  'form and function merge ',
-  'to create unique environments.',
+  'Beyond walls, a story waits to be lived ',
+  'where light, texture, proportion, ',
+  'and emotion move in perfect rhythm. Every ',
+  'space becomes beautiful to behold, ',
+  'effortless to live in, unforgettable ',
+  'to experience, and deeply personal ',
+  'to call your own.',
 ];
 
 const Section2 = () => {

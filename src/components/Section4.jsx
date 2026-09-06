@@ -52,11 +52,11 @@ const Section4 = () => {
         </div>
 
         <div className="text textAnim rel">
-          <p>Trust a single point of contact to complete your project with expertise, precision, dedication, exclusivity, and mastery, from design to final delivery.</p>
+          <p>Trust one dedicated partner to bring your vision to life with expertise, precision, devotion, exclusivity, and mastery — from first concept to final handover.</p>
         </div>
 
         <div className="text textAnim rel">
-          <p>We manage every phase with a turnkey approach, ensuring a result that fully respects aesthetics, functionality, time, and budget.</p>
+          <p>We orchestrate every phase with a seamless turnkey approach, guaranteeing a result that honors your aesthetics, functionality, timeline, and budget — without compromise.</p>
         </div>
 
       </div>

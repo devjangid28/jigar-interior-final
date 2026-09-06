@@ -248,7 +248,7 @@ const HeroSection = () => {
 
         <div className="caption __caption">
           <div className={`left ${isActive ? 'visible' : ''}`}>
-            <p>At Jigar Interiors, we are dedicated to creating environments where every detail is carefully aligned to offer you a unique multisensory experience.</p>
+            <p>At Jigar Interiors, we believe a space should do more than look beautiful — it should feel like you, in every detail, every texture, every moment.</p>
           </div>
         </div>
       </section>
