@@ -49,8 +49,8 @@ const Footer = () => {
                   </a>
                 </p>
                 <p style={{ fontFamily: '"Anek Bangla", sans-serif', fontSize: '20px', fontWeight: 300, color: '#FFFFFF', lineHeight: 1.5 }}>
-                  <a href="mailto:jigarinterior@gmail.com" title="Scrivici" rel="noopener">
-                    jigarinterior07@gmail.com
+                  <a href="mailto:studio@jigarinterior.com" title="Scrivici" rel="noopener">
+                    studio@jigarinterior.com
                   </a>
                 </p>
               </div>

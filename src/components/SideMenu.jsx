@@ -116,7 +116,7 @@ const SideMenu = ({ isOpen, onClose }) => {
             <li>
               <div className="sidemenu__contact-title">Email</div>
               <div className="sidemenu__contact-content">
-                <a href="mailto:jigarinterior07@gmail.com">jigarinterior07@gmail.com</a>
+                <a href="mailto:studio@jigarinterior.com">studio@jigarinterior.com</a>
               </div>
             </li>
             <li>
