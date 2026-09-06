@@ -99,7 +99,7 @@ const Footer = () => {
           <span>Vadodara</span>
           <span className="resp_sep"> - </span>
           <br />
-          <span>Email: jigarinterior@gmail.com - M 9879337290</span>
+          <span>Email: studio@jigarinterior.com - M 9879337290</span>
           <span className="resp_sep"> - </span>
           <br />
           <span>For More info. 8347279789 </span>
