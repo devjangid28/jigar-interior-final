@@ -26,7 +26,7 @@ const projects = [
     id: 2,
     num: '2',
     title: ['Living', 'Room'],
-    image: '/living D.jpg',
+    image: '/living D .jpg',
     mobileImage: '/living.webp',
     alt: 'Living Room',
     images: [

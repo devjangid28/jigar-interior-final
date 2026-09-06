@@ -44,7 +44,7 @@ const Section8 = () => {
         ? `Their vision:\n“${form.message}”`
         : 'Their vision: “I would love to talk about my interiors.”',
       '',
-      '— sent with love from jigarinteriors.in',
+      '— sent with love from jigarinterior.com',
     ]
       .filter((line) => line !== null)
       .join('\n');
