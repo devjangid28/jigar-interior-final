@@ -149,11 +149,11 @@
 .s7-slider__bar-wrap {
   display: block;
   width: 100%;
-  height: 3px;
+  height: 4px;
   margin-top: 1.4rem;
   overflow: hidden;
   border-radius: 2px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .s7-slider__bar {

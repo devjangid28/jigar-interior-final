@@ -100,6 +100,7 @@ const Section7 = () => {
   const heldRef = useRef(false);
   const holdTimerRef = useRef(null);
   const autoplayRef = useRef(null);
+  const lastAdvanceRef = useRef(Date.now());
 
   useEffect(() => {
     activeSlideRef.current = activeSlide;
@@ -113,6 +114,11 @@ const Section7 = () => {
       heldRef.current = false;
       setIsHeld(false);
     }, duration);
+  };
+
+  const advanceSlide = () => {
+    lastAdvanceRef.current = Date.now();
+    setActiveSlide((prev) => (prev + 1) % projects.length);
   };
 
   const goToSlide = (index) => {
@@ -176,14 +182,16 @@ const Section7 = () => {
         setIsInView(entry.isIntersecting);
       });
     };
-    const visibilityObserver = new IntersectionObserver(onEnter, { threshold: 0.25 });
+    const visibilityObserver = new IntersectionObserver(onEnter, { threshold: 0 });
     visibilityObserver.observe(slider);
 
     autoplayRef.current = setInterval(() => {
       if (inViewRef.current && !heldRef.current) {
-        setActiveSlide((prev) => (prev + 1) % projects.length);
+        if (Date.now() - lastAdvanceRef.current > SLIDE_DURATION + 1500) {
+          advanceSlide();
+        }
       }
-    }, SLIDE_DURATION);
+    }, 1000);
 
     let startX = 0;
     let dragging = false;
@@ -192,7 +200,7 @@ const Section7 = () => {
       dragging = true;
       startX = e.touches[0].clientX;
       stage.style.transition = 'none';
-      holdAutoplay(HOLD_DURATION + 15000);
+      holdAutoplay(1200);
     };
 
     const onTouchMove = (e) => {
@@ -256,7 +264,11 @@ const Section7 = () => {
             </div>
 
             <div className={`s7-slider__bar-wrap ${isHeld || !isInView ? 'is-paused' : ''}`}>
-              <span className="s7-slider__bar" key={activeSlide + (isHeld ? '-h' : '') + (isInView ? '-v' : '')} />
+              <span
+                className="s7-slider__bar"
+                key={activeSlide}
+                onAnimationEnd={() => advanceSlide()}
+              />
             </div>
 
             <div className="s7-slider__foot">
