@@ -1,7 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Section7.css';
 
 const isDesktopView = () => window.innerWidth > 1023;
+
+const SLIDE_DURATION = 5000;
+const HOLD_DURATION = 7000;
 
 const ArrowSvg = () => (
   <svg x="0px" y="0px" viewBox="0 0 99.9 99.9" xmlSpace="preserve">
@@ -27,94 +30,110 @@ const FrecciaSvg = () => (
 const projects = [
   {
     id: 'img_0',
-    alt: 'Interior Design 1',
+    alt: 'Master Bedroom Interior',
+    name: 'Master Bedroom',
+    tag: 'quiet luxury & comfort',
     ratio: 'ratio-3-4',
-    srcSet: { fallback: '/interior 1.png' },
-    bkg: {
-      small: "url('/interior 1.png')",
-      medium: "url('/interior 1.png')",
-      large: "url('/interior 1.png')",
-      xlarge: "url('/interior 1.png')",
-    },
+    src: '/interior 1.png',
   },
   {
     id: 'img_1',
-    alt: 'Interior Design 2',
+    alt: 'Dining Room Interior',
+    name: 'Dining Room',
+    tag: 'where meals become memories',
     ratio: 'ratio-4-5',
-    srcSet: { fallback: '/interior 2.png' },
-    bkg: {
-      small: "url('/interior 2.png')",
-      medium: "url('/interior 2.png')",
-      large: "url('/interior 2.png')",
-      xlarge: "url('/interior 2.png')",
-    },
+    src: '/dinning.jpg',
   },
   {
     id: 'img_2',
-    alt: 'Interior Design 3',
+    alt: 'Living Room Interior',
+    name: 'Living Room',
+    tag: 'the heart of every home',
     ratio: 'ratio-4-5',
     hasFreccia: true,
     frecciaText: 'Creative in concept, technical in detail',
-    srcSet: { fallback: '/interior 3.png' },
-    bkg: {
-      small: "url('/interior 3.png')",
-      medium: "url('/interior 3.png')",
-      large: "url('/interior 3.png')",
-      xlarge: "url('/interior 3.png')",
-    },
+    src: '/living roomm.jpg',
   },
   {
     id: 'img_3',
-    alt: 'Interior Design 4',
+    alt: 'TV Lounge Interior',
+    name: 'TV Lounge',
+    tag: 'entertain, unwind, live',
     ratio: 'ratio-3-4',
-    srcSet: { fallback: '/interior 4.png' },
-    bkg: {
-      small: "url('/interior 4.png')",
-      medium: "url('/interior 4.png')",
-      large: "url('/interior 4.png')",
-      xlarge: "url('/interior 4.png')",
-    },
+    src: '/Tvv unit.jpg',
   },
   {
     id: 'img_4',
-    alt: 'Interior Design 5',
+    alt: 'Grand Foyer Interior',
+    name: 'Grand Foyer',
+    tag: 'first impressions, always',
     ratio: 'ratio-1-1',
-    srcSet: { fallback: '/interior 5.png' },
-    bkg: {
-      small: "url('/interior 5.png')",
-      medium: "url('/interior 5.png')",
-      large: "url('/interior 5.png')",
-      xlarge: "url('/interior 5.png')",
-    },
+    src: '/floyer2.jpg',
   },
 ];
+
+const ChevronLeft = () => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const ChevronRight = () => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 const Section7 = () => {
   const sectionRef = useRef(null);
   const wrapperRef = useRef(null);
   const pinSpacerRef = useRef(null);
-  const mobileSliderRef = useRef(null);
-  const mobileTrackRef = useRef(null);
+  const sliderRef = useRef(null);
+  const stageRef = useRef(null);
+
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isInView, setIsInView] = useState(true);
+  const [isHeld, setIsHeld] = useState(false);
+
+  const activeSlideRef = useRef(0);
+  const inViewRef = useRef(true);
+  const heldRef = useRef(false);
+  const holdTimerRef = useRef(null);
   const autoplayRef = useRef(null);
 
-  const goToSlide = useCallback((index) => {
-    setActiveSlide(index);
-    if (mobileTrackRef.current) {
-      mobileTrackRef.current.style.transform = `translateX(-${index * 100}%)`;
-    }
-  }, []);
+  useEffect(() => {
+    activeSlideRef.current = activeSlide;
+  }, [activeSlide]);
 
-  const activeSlideRef = useRef(activeSlide);
-  activeSlideRef.current = activeSlide;
+  const holdAutoplay = (duration = HOLD_DURATION) => {
+    heldRef.current = true;
+    setIsHeld(true);
+    clearTimeout(holdTimerRef.current);
+    holdTimerRef.current = setTimeout(() => {
+      heldRef.current = false;
+      setIsHeld(false);
+    }, duration);
+  };
+
+  const goToSlide = (index) => {
+    const next = (index + projects.length) % projects.length;
+    setActiveSlide(next);
+    holdAutoplay();
+    if (stageRef.current) {
+      stageRef.current.style.transform = 'translateX(0px)';
+    }
+  };
 
   useEffect(() => {
+    // Desktop pinned horizontal scroll
     const section = sectionRef.current;
     const wrapper = wrapperRef.current;
     const pinSpacer = pinSpacerRef.current;
-    if (!section || !wrapper || !pinSpacer) return;
+    const slider = sliderRef.current;
+    const stage = stageRef.current;
 
     if (isDesktopView()) {
+      if (!section || !wrapper || !pinSpacer) return;
       let rafId = null;
       let cachedDistance = 0;
 
@@ -147,119 +166,124 @@ const Section7 = () => {
         window.removeEventListener('resize', updateLayout);
         if (rafId) cancelAnimationFrame(rafId);
       };
-    } else {
-      const slider = mobileSliderRef.current;
-      if (!slider) return;
-
-      const startAutoplay = () => {
-        clearInterval(autoplayRef.current);
-        autoplayRef.current = setInterval(() => {
-          setActiveSlide((prev) => {
-            const next = (prev + 1) % projects.length;
-            if (mobileTrackRef.current) {
-              mobileTrackRef.current.style.transform = `translateX(-${next * 100}%)`;
-            }
-            return next;
-          });
-        }, 5000);
-      };
-
-      let touchStartX = 0;
-      let touchDeltaX = 0;
-
-      const onTouchStart = (e) => {
-        touchStartX = e.touches[0].clientX;
-        touchDeltaX = 0;
-        clearInterval(autoplayRef.current);
-      };
-
-      const onTouchMove = (e) => {
-        touchDeltaX = e.touches[0].clientX - touchStartX;
-        if (mobileTrackRef.current) {
-          const currentIdx = activeSlideRef.current;
-          const offset = -currentIdx * 100 + (touchDeltaX / slider.offsetWidth) * 100;
-          mobileTrackRef.current.style.transition = 'none';
-          mobileTrackRef.current.style.transform = `translateX(${offset}%)`;
-        }
-      };
-
-      const onTouchEnd = () => {
-        if (mobileTrackRef.current) {
-          mobileTrackRef.current.style.transition = '';
-        }
-        setActiveSlide((prev) => {
-          let next = prev;
-          if (Math.abs(touchDeltaX) > 50) {
-            if (touchDeltaX < 0 && prev < projects.length - 1) {
-              next = prev + 1;
-            } else if (touchDeltaX > 0 && prev > 0) {
-              next = prev - 1;
-            }
-          }
-          if (mobileTrackRef.current) {
-            mobileTrackRef.current.style.transform = `translateX(-${next * 100}%)`;
-          }
-          return next;
-        });
-        startAutoplay();
-      };
-
-      slider.addEventListener('touchstart', onTouchStart, { passive: true });
-      slider.addEventListener('touchmove', onTouchMove, { passive: true });
-      slider.addEventListener('touchend', onTouchEnd);
-
-      startAutoplay();
-
-      return () => {
-        clearInterval(autoplayRef.current);
-        slider.removeEventListener('touchstart', onTouchStart);
-        slider.removeEventListener('touchmove', onTouchMove);
-        slider.removeEventListener('touchend', onTouchEnd);
-      };
     }
-  }, [goToSlide, activeSlide]);
 
-  const renderMobileSlideStyle = (project) => ({
-    '--bkg-small': project.bkg.small,
-    '--bkg-medium': project.bkg.medium,
-    '--bkg-large': project.bkg.large,
-    '--bkg-xlarge': project.bkg.xlarge,
-  });
+    if (!slider || !stage) return;
+
+    const onEnter = (entries) => {
+      entries.forEach((entry) => {
+        inViewRef.current = entry.isIntersecting;
+        setIsInView(entry.isIntersecting);
+      });
+    };
+    const visibilityObserver = new IntersectionObserver(onEnter, { threshold: 0.25 });
+    visibilityObserver.observe(slider);
+
+    autoplayRef.current = setInterval(() => {
+      if (inViewRef.current && !heldRef.current) {
+        setActiveSlide((prev) => (prev + 1) % projects.length);
+      }
+    }, SLIDE_DURATION);
+
+    let startX = 0;
+    let dragging = false;
+
+    const onTouchStart = (e) => {
+      dragging = true;
+      startX = e.touches[0].clientX;
+      stage.style.transition = 'none';
+      holdAutoplay(HOLD_DURATION + 15000);
+    };
+
+    const onTouchMove = (e) => {
+      if (!dragging) return;
+      const dx = e.touches[0].clientX - startX;
+      stage.style.transform = `translateX(${dx}px)`;
+    };
+
+    const onTouchEnd = () => {
+      if (!dragging) return;
+      dragging = false;
+      stage.style.transition = '';
+      stage.style.transform = 'translateX(0px)';
+    };
+
+    slider.addEventListener('touchstart', onTouchStart, { passive: true });
+    slider.addEventListener('touchmove', onTouchMove, { passive: true });
+    slider.addEventListener('touchend', onTouchEnd, { passive: true });
+
+    return () => {
+      clearInterval(autoplayRef.current);
+      clearTimeout(holdTimerRef.current);
+      visibilityObserver.disconnect();
+      slider.removeEventListener('touchstart', onTouchStart);
+      slider.removeEventListener('touchmove', onTouchMove);
+      slider.removeEventListener('touchend', onTouchEnd);
+    };
+  }, []);
 
   return (
     <div className="s7-pin-spacer" ref={pinSpacerRef}>
     <section id="sec_realizzazioni" ref={sectionRef}>
       <div className="container">
 
-        {/* MOBILE: Swiper gallery */}
-        <div className="w100 mobile p10tb p5lr" ref={mobileSliderRef}>
+        {/* MOBILE: Cinematic slider */}
+        <div className="w100 mobile p10tb p5lr">
           <div className="text textAnim tac_mobile rel w100">
             <h2 className="h1">ACHIEVEMENTS</h2>
           </div>
 
-          <div className="w100 rel" id="swiper_gallery">
-            <div className="swiper">
-              <div className="swiper-wrapper" ref={mobileTrackRef}>
-                {projects.map((project) => (
-                  <div
+          <div className="s7-slider" ref={sliderRef}>
+            <div className="s7-slider__stage" ref={stageRef}>
+              {projects.map((project, i) => (
+                <div
+                  key={project.id}
+                  className={`s7-slider__slide ${i === activeSlide ? 'is-active' : ''}`}
+                >
+                  <div className="s7-slider__img">
+                    <img src={project.src} alt={project.alt} loading={i === 0 ? undefined : 'lazy'} />
+                  </div>
+                  <span className="s7-slider__shade" />
+
+                  <div className="s7-slider__content">
+                    <span className="s7-slider__num">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="s7-slider__rule" />
+                    <span className="s7-slider__name">{project.name}</span>
+                    <span className="s7-slider__tag">{project.tag}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className={`s7-slider__bar-wrap ${isHeld || !isInView ? 'is-paused' : ''}`}>
+              <span className="s7-slider__bar" key={activeSlide + (isHeld ? '-h' : '') + (isInView ? '-v' : '')} />
+            </div>
+
+            <div className="s7-slider__foot">
+              <span className="s7-slider__count">
+                {String(activeSlide + 1).padStart(2, '0')}<em>/</em>{String(projects.length).padStart(2, '0')}
+              </span>
+
+              <div className="s7-slider__dots">
+                {projects.map((project, i) => (
+                  <button
                     key={project.id}
-                    className="swiper-slide sized rel ratio-3-4"
-                    style={renderMobileSlideStyle(project)}
+                    className={`s7-slider__dot ${i === activeSlide ? 'is-active' : ''}`}
+                    onClick={() => goToSlide(i)}
+                    aria-label={`Go to slide ${i + 1}`}
                   />
                 ))}
               </div>
-            </div>
-          </div>
 
-          <div id="nav_dots">
-            {projects.map((project, i) => (
-              <button
-                key={project.id}
-                className={`swiper-pagination-bullet ${i === activeSlide ? 'swiper-pagination-bullet-active' : ''}`}
-                onClick={() => goToSlide(i)}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
+              <div className="s7-slider__next">
+                <button className="s7-slider__arrow" onClick={() => goToSlide(activeSlide - 1)} aria-label="Previous slide">
+                  <ChevronLeft />
+                </button>
+                <button className="s7-slider__arrow" onClick={() => goToSlide(activeSlide + 1)} aria-label="Next slide">
+                  <ChevronRight />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -269,7 +293,7 @@ const Section7 = () => {
           <div className="s7_sec_img s7_img_0">
             <picture className="w100 rel ratio-3-4">
               <img
-                src={projects[0].srcSet.fallback}
+                src={projects[0].src}
                 width="100"
                 height="100"
                 alt={projects[0].alt}
@@ -285,7 +309,7 @@ const Section7 = () => {
             <div key={project.id} className={`s7_sec_img ${project.hasFreccia ? 's7_has_freccia' : ''}`}>
               <picture className={`w100 rel ${project.ratio}`}>
                 <img
-                  src={project.srcSet.fallback}
+                  src={project.src}
                   width="100"
                   height="100"
                   alt={project.alt}

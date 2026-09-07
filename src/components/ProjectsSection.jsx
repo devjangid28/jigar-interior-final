@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './ProjectsSection.css';
 import ProjectDetail from './ProjectDetail.jsx';
+import AllProjects from './AllProjects.jsx';
 
 const projects = [
   {
@@ -137,6 +138,7 @@ const getSlotStyle = (slot) => {
 };
 
 const CollageCards = ({ isMobile }) => {
+  const [showAll, setShowAll] = useState(false);
   const n = collageImages.length;
   // slotOf[i] = which slot image i currently occupies
   // start: image 0 → slot 1 (center), image 1 → slot 2 (right), image 4 → slot 0 (left), rest hidden
@@ -167,43 +169,62 @@ const CollageCards = ({ isMobile }) => {
     });
   };
 
+  const openAll = () => {
+    setShowAll(true);
+  };
+
   return (
-    <div className="collage-wrap" onClick={handleTap}>
-      <div className="collage-heading">
-        <h2>TURNKEY SOLUTIONS</h2>
-        <p>Your Space, Fully Transformed.</p>
+    <>
+      <div className="collage-wrap" onClick={handleTap}>
+        <div className="collage-heading">
+          <h2>TURNKEY SOLUTIONS</h2>
+          <p>Your Space, Fully Transformed.</p>
+        </div>
+        <div className="collage-stage">
+          {collageImages.map((img, i) => {
+            const s = getSlotStyle(slotOf[i]);
+            return (
+              <div
+                key={img.src}
+                style={{
+                  position: 'absolute',
+                  top: s.top,
+                  left: s.left,
+                  width: s.width,
+                  height: s.height,
+                  borderRadius: s.borderRadius,
+                  transform: s.transform,
+                  transformOrigin: '50% 50%',
+                  zIndex: s.zIndex,
+                  opacity: s.opacity,
+                  overflow: 'hidden',
+                  transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)',
+                  willChange: 'transform',
+                }}
+              >
+                <img src={isMobile ? img.mobileSrc : img.src} alt={img.alt} draggable={false} />
+              </div>
+            );
+          })}
+        </div>
+        <div className="collage-btn-wrap" onClick={(e) => e.stopPropagation()}>
+          <button
+            className="collage-show-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              openAll();
+            }}
+          >
+            show all
+          </button>
+        </div>
       </div>
-      <div className="collage-stage">
-        {collageImages.map((img, i) => {
-          const s = getSlotStyle(slotOf[i]);
-          return (
-            <div
-              key={img.src}
-              style={{
-                position: 'absolute',
-                top: s.top,
-                left: s.left,
-                width: s.width,
-                height: s.height,
-                borderRadius: s.borderRadius,
-                transform: s.transform,
-                transformOrigin: '50% 50%',
-                zIndex: s.zIndex,
-                opacity: s.opacity,
-                overflow: 'hidden',
-                transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)',
-                willChange: 'transform',
-              }}
-            >
-              <img src={isMobile ? img.mobileSrc : img.src} alt={img.alt} draggable={false} />
-            </div>
-          );
-        })}
-      </div>
-      <div className="collage-btn-wrap" onClick={(e) => e.stopPropagation()}>
-        <a href="/all-projects" className="collage-show-btn">show all</a>
-      </div>
-    </div>
+
+      {showAll && (
+        <AllProjects onClose={() => setShowAll(false)} />
+      )}
+    </>
   );
 };
 
