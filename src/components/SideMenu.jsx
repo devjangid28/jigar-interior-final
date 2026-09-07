@@ -110,7 +110,8 @@ const SideMenu = ({ isOpen, onClose }) => {
             <li>
               <div className="sidemenu__contact-title">Phone</div>
               <div className="sidemenu__contact-content">
-                <a href="tel:+919879337290">+91 9879337290</a>
+                <a href="tel:+919879337290">+91 9879337290</a><br />
+                <a href="tel:+919724441259">+91 9724441259</a>
               </div>
             </li>
             <li>

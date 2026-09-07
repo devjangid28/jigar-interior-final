@@ -49,6 +49,11 @@ const Footer = () => {
                   </a>
                 </p>
                 <p style={{ fontFamily: '"Anek Bangla", sans-serif', fontSize: '20px', fontWeight: 300, color: '#FFFFFF', lineHeight: 1.5 }}>
+                  <a href="tel:+919724441259" title="Chiamaci" rel="noopener">
+                    Tel: +91 9724441259
+                  </a>
+                </p>
+                <p style={{ fontFamily: '"Anek Bangla", sans-serif', fontSize: '20px', fontWeight: 300, color: '#FFFFFF', lineHeight: 1.5 }}>
                   <a href="mailto:studio@jigarinterior.com" title="Scrivici" rel="noopener">
                     studio@jigarinterior.com
                   </a>
@@ -95,16 +100,11 @@ const Footer = () => {
         <p className="tac_mobile" style={{ textAlign: 'left', paddingLeft: '50px', font: '15px "Anek Bangla", sans-serif', color: '#FFFFFF' }}>
           <span>&copy; 2026&nbsp;Jigar Interior Design</span>
           <span className="resp_sep"> - </span>
-          <br />
           <span>Vadodara</span>
           <span className="resp_sep"> - </span>
-          <br />
-          <span>Email: studio@jigarinterior.com - M 9879337290</span>
+          <span>Email: studio@jigarinterior.com - M 9879337290, 9724441259</span>
           <span className="resp_sep"> - </span>
-          <br />
-          <span>For More info. 8347279789 </span>
-          <br />
-          <br style={{ display: 'block' }} />
+          <span>For More info. 9724441259</span>
         </p>
         <p className="tac_mobile" style={{ font: '15px "Anek Bangla", sans-serif', color: '#FFFFFF', paddingRight: '50px' }}>
           Created by:{' '}
