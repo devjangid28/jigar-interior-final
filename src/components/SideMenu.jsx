@@ -133,12 +133,6 @@ const SideMenu = ({ isOpen, onClose }) => {
               </div>
             </li>
           </ul>
-          <div className="sidemenu__contact-footer">
-            <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Cookie Policy</a></li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
