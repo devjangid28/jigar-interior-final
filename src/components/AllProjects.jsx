@@ -85,7 +85,43 @@ const AllProjects = ({ onClose }) => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [lightbox, setLightbox] = useState(null);
   const [entered, setEntered] = useState(false);
+  const [docked, setDocked] = useState(false);
   const catRefs = useRef([]);
+  const apRef = useRef(null);
+
+  useEffect(() => {
+    const scroller = apRef.current;
+    if (!scroller) return;
+    const navEl = scroller.querySelector('.ap__nav');
+    if (!navEl) return;
+    const base = navEl.offsetTop;
+    const showAt = base - 60;
+    const hideAt = base - 180;
+    let current = false;
+    let ticking = false;
+    const read = () => {
+      ticking = false;
+      const next = current
+        ? scroller.scrollTop >= hideAt
+        : scroller.scrollTop >= showAt;
+      if (next !== current) {
+        current = next;
+        setDocked(next);
+      }
+    };
+    const update = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(read);
+      }
+    };
+    read();
+    scroller.addEventListener('scroll', update, { passive: true });
+    return () => {
+      scroller.removeEventListener('scroll', update);
+      if (ticking) cancelAnimationFrame(read);
+    };
+  }, []);
 
   useEffect(() => {
     requestAnimationFrame(() => requestAnimationFrame(() => setEntered(true)));
@@ -139,8 +175,6 @@ const AllProjects = ({ onClose }) => {
     }
   };
 
-  const totalImages = categories.reduce((sum, c) => sum + c.images.length, 0);
-
   const flat = React.useMemo(() => {
     return categories.flatMap((cat) =>
       cat.images.map((src) => ({ src, label: cat.title.join(' ') }))
@@ -153,14 +187,31 @@ const AllProjects = ({ onClose }) => {
     setLightbox(offset + imgIdx);
   };
 
+  const renderPills = () =>
+    categories.map((cat, i) => (
+      <button
+        key={i}
+        className={`ap__nav-btn ${activeCategory === i ? 'ap__nav-btn--active' : ''}`}
+        onClick={() => {
+          setActiveCategory(i);
+          document.getElementById(`ap-cat-${i}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }}
+      >
+        {cat.title.join(' ')}
+      </button>
+    ));
+
   return (
-    <div className={`ap ${entered ? 'ap--in' : ''}`}>
+    <div className={`ap ${entered ? 'ap--in' : ''}`} ref={apRef}>
       <div className="ap__bar">
         <button className="ap__close" onClick={handleClose} aria-label="Close">
           <span className="ap__close-line" />
           <span className="ap__close-line" />
         </button>
-        <div className="ap__count">{totalImages} photos</div>
+      </div>
+
+      <div className={`ap__dock ${docked ? 'ap__dock--in' : ''}`}>
+        {renderPills()}
       </div>
 
       <header className="ap__header">
@@ -175,19 +226,8 @@ const AllProjects = ({ onClose }) => {
         <p className="ap__subtitle">Every space, beautifully transformed</p>
       </header>
 
-      <nav className="ap__nav">
-        {categories.map((cat, i) => (
-          <button
-            key={i}
-            className={`ap__nav-btn ${activeCategory === i ? 'ap__nav-btn--active' : ''}`}
-            onClick={() => {
-              setActiveCategory(i);
-              document.getElementById(`ap-cat-${i}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-          >
-            {cat.title.join(' ')}
-          </button>
-        ))}
+      <nav className={`ap__nav ${docked ? 'ap__nav--hidden' : ''}`}>
+        {renderPills()}
       </nav>
 
       <div className="ap__body">

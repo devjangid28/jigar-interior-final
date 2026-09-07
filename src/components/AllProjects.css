@@ -23,9 +23,12 @@
   z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem 5%;
-  background: linear-gradient(to bottom, rgba(13, 13, 13, 0.95), rgba(13, 13, 13, 0));
+  padding: 0.75rem 5%;
+  pointer-events: none;
+}
+
+.ap__close {
+  pointer-events: auto;
 }
 
 .ap__close {
@@ -56,13 +59,6 @@
 
 .ap__close-line:first-child { transform: rotate(45deg) translateY(4px); }
 .ap__close-line:last-child  { transform: rotate(-45deg) translateY(-5px); }
-
-.ap__count {
-  font-family: var(--ad-font-sans);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  color: var(--grey);
-}
 
 /* ---- Header ---- */
 .ap__header {
@@ -111,11 +107,40 @@
   text-transform: lowercase;
 }
 
-/* ---- Scroll nav ---- */
+/* ---- Dock bar (appears on scroll) ---- */
+.ap__dock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 19;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1.25rem 5% 1.25rem calc(5% + 4rem);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  background: #0d0d0d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transform: translateY(-108%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.ap__dock::-webkit-scrollbar {
+  display: none;
+}
+
+.ap__dock--in {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---- Scroll nav (below header) ---- */
 .ap__nav {
-  position: sticky;
-  top: 5rem;
-  z-index: 15;
   display: flex;
   gap: 0.5rem;
   padding: 0.75rem 5%;
@@ -123,10 +148,12 @@
   overflow-y: hidden;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  background: rgba(13, 13, 13, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #0d0d0d;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ap__nav--hidden {
+  visibility: hidden;
 }
 
 .ap__nav::-webkit-scrollbar {
@@ -143,7 +170,7 @@
   font-family: var(--ad-font-sans);
   font-size: 0.75rem;
   letter-spacing: 0.04em;
-  text-transform: lowercase;
+  text-transform: capitalize;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -163,7 +190,7 @@
 /* ---- Category ---- */
 .ap__category {
   margin-bottom: 4.5rem;
-  scroll-margin-top: 9rem;
+  scroll-margin-top: 5rem;
 }
 
 .ap__cat-header {
