@@ -29,22 +29,6 @@ const FrecciaSvg = () => (
 
 const projects = [
   {
-    id: 'img_0',
-    alt: 'Master Bedroom Interior',
-    name: 'Master Bedroom',
-    tag: 'quiet luxury & comfort',
-    ratio: 'ratio-3-4',
-    src: '/interior 1.png',
-  },
-  {
-    id: 'img_1',
-    alt: 'Dining Room Interior',
-    name: 'Dining Room',
-    tag: 'where meals become memories',
-    ratio: 'ratio-4-5',
-    src: '/dinning.jpg',
-  },
-  {
     id: 'img_2',
     alt: 'Living Room Interior',
     name: 'Living Room',
@@ -52,7 +36,7 @@ const projects = [
     ratio: 'ratio-4-5',
     hasFreccia: true,
     frecciaText: 'Creative in concept, technical in detail',
-    src: '/living roomm.jpg',
+    src: '/living room.jpg',
   },
   {
     id: 'img_3',
@@ -60,7 +44,23 @@ const projects = [
     name: 'TV Lounge',
     tag: 'entertain, unwind, live',
     ratio: 'ratio-3-4',
-    src: '/Tvv unit.jpg',
+    src: '/tv unit design.jpg',
+  },
+  {
+    id: 'img_1',
+    alt: 'Dining Room Interior',
+    name: 'Dining Room',
+    tag: 'where meals become memories',
+    ratio: 'ratio-4-5',
+    src: '/dinning2.jpg',
+  },
+  {
+    id: 'img_0',
+    alt: 'Master Bedroom Interior',
+    name: 'Master Bedroom',
+    tag: 'quiet luxury & comfort',
+    ratio: 'ratio-3-4',
+    src: '/bedroom7.jpg',
   },
   {
     id: 'img_4',

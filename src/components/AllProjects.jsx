@@ -3,21 +3,6 @@ import './AllProjects.css';
 
 const categories = [
   {
-    title: ['Master', 'Bedroom'],
-    cover: '/bedroom M.jpg',
-    images: [
-      '/interior 1.png',
-      '/masterbed room.jpg',
-      '/bedroom1.jpg',
-      '/bedroom2.jpg',
-      '/bedroom3.jpg',
-      '/bedroom4.jpg',
-      '/bedroom5.jpg',
-      '/bedroom6.jpg',
-      '/bedroom7.jpg',
-    ],
-  },
-  {
     title: ['Living', 'Room'],
     cover: '/living.webp',
     images: [
@@ -44,15 +29,6 @@ const categories = [
     ],
   },
   {
-    title: ['Pooja', 'Room'],
-    cover: '/mandir.webp',
-    images: [
-      '/pooja2.jpg',
-      '/pooja3.jpg',
-      '/pooja4.jpg',
-    ],
-  },
-  {
     title: ['Dining', 'Room'],
     cover: '/dinning.webp',
     images: [
@@ -62,10 +38,27 @@ const categories = [
     ],
   },
   {
-    title: ['Door', 'Design'],
-    cover: '/door.webp',
+    title: ['Pooja', 'Room'],
+    cover: '/mandir.webp',
     images: [
-      '/door2.jpg',
+      '/pooja2.jpg',
+      '/pooja3.jpg',
+      '/pooja4.jpg',
+    ],
+  },
+  {
+    title: ['Master', 'Bedroom'],
+    cover: '/bedroom M.jpg',
+    images: [
+      '/interior 1.png',
+      '/masterbed room.jpg',
+      '/bedroom1.jpg',
+      '/bedroom2.jpg',
+      '/bedroom3.jpg',
+      '/bedroom4.jpg',
+      '/bedroom5.jpg',
+      '/bedroom6.jpg',
+      '/bedroom7.jpg',
     ],
   },
   {
@@ -77,6 +70,13 @@ const categories = [
       '/floyer2.jpg',
       '/floyer3.jpg',
       '/floyer4.jpg',
+    ],
+  },
+  {
+    title: ['Door', 'Design'],
+    cover: '/door.webp',
+    images: [
+      '/door2.jpg',
     ],
   },
 ];

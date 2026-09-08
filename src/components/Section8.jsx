@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Section8.css';
 
-const WHATSAPP_NUMBER = '9879337290';
+const WHATSAPP_NUMBER = '919724441259';
 
 const ArrowSvg = () => (
   <svg x="0px" y="0px" viewBox="0 0 99.9 99.9" xmlSpace="preserve">
@@ -84,7 +84,7 @@ const Section8 = () => {
           <p className="s8_whatsapp_hint">
             Your message lands directly on our WhatsApp&nbsp;·&nbsp;
             <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
-              +91 98793 37290
+              +91 9724441259
             </a>
           </p>
         </div>
