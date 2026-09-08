@@ -23,7 +23,7 @@ const projects = [
     num: '2',
     title: ['TV', 'Units', 'Design'],
     image: '/Tv D.jpg',
-    mobileImage: '/Tv M.jpg',
+    mobileImage: '/tv unit design.jpg',
     alt: 'TV Units Design',
     images: [
       '/interior 4.png',
