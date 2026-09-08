@@ -99,6 +99,11 @@ footer {
   color: var(--grey);
 }
 
+#credits #credits_studio_container {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 /* TEXT ANIM */
 
 .footer-anim p {

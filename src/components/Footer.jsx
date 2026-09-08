@@ -106,7 +106,7 @@ const Footer = () => {
           <span className="resp_sep"> - </span>
           <span>For More info. 9724441259</span>
         </p>
-        <p className="tac_mobile" style={{ font: '15px "Anek Bangla", sans-serif', color: '#FFFFFF', paddingRight: '50px' }}>
+        <p className="tac_mobile" style={{ display: 'none', font: '15px "Anek Bangla", sans-serif', color: '#FFFFFF', paddingRight: '50px' }} id="credits_studio_container" hidden>
           Created by:{' '}
           <a
             href="https://portfolio-theta-rosy-cv2yj45f9r.vercel.app/"
