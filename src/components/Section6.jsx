@@ -99,6 +99,7 @@ const Section6 = () => {
             <picture className="rel w90l ratio-1-1e1">
               <img
                 src="/interior 7.png"
+                alt="Completed luxury interior design project in Vadodara"
               />
             </picture>
 

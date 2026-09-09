@@ -132,6 +132,9 @@ const HeroSection = () => {
           <a className="link-circle" href="#sec_servizi" role="menuitem">
             <span>Services</span>
           </a>
+          <a className="link-circle" href="/blog" role="menuitem">
+            <span>Blog</span>
+          </a>
           <a className="link-circle" href="#contact" role="menuitem">
             <span>Contact</span>
           </a>
@@ -191,6 +194,7 @@ const HeroSection = () => {
         <div className="navbar-pill__menu">
           <a className="navbar-pill__link" href="#sec_realizzazioni" onClick={() => setMenuOpen(false)}>Projects</a>
           <a className="navbar-pill__link" href="#sec_servizi" onClick={() => setMenuOpen(false)}>Services</a>
+          <a className="navbar-pill__link" href="/blog" onClick={() => setMenuOpen(false)}>Blog</a>
           <a className="navbar-pill__link" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="https://wa.me/919724441259" target="_blank" rel="noopener noreferrer" className="navbar-pill__tellus" aria-label="Tell us on WhatsApp">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -207,6 +211,7 @@ const HeroSection = () => {
         <div className="mobile-menu__inner">
           <a className="mobile-menu__link" href="#sec_realizzazioni" onClick={() => setMenuOpen(false)}>Projects</a>
           <a className="mobile-menu__link" href="#sec_servizi" onClick={() => setMenuOpen(false)}>Services</a>
+          <a className="mobile-menu__link" href="/blog" onClick={() => setMenuOpen(false)}>Blog</a>
           <a className="mobile-menu__link" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="https://wa.me/919724441259" target="_blank" rel="noopener noreferrer" className="mobile-menu__link mobile-menu__whatsapp" aria-label="Tell us on WhatsApp">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -236,7 +241,7 @@ const HeroSection = () => {
             loop
             playsInline
             webkitplaysinline="true"
-            preload="auto"
+            preload="metadata"
           >
             <source src="/MOBILE.mp4" type="video/mp4" media="(max-width: 768px), (pointer: coarse) and (orientation: portrait)" />
             <source src="/H Video D.mp4" type="video/mp4" />

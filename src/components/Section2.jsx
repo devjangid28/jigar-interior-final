@@ -80,7 +80,7 @@ const Section2 = () => {
               src="/interior 5.png"
               width="100"
               height="100"
-              alt="Villa Nicole Project"
+              alt="Modern living room interior design in Vadodara"
             />
           </picture>
         </div>
@@ -150,7 +150,7 @@ const Section2 = () => {
               src="/interior 10.png"
               width="100"
               height="100"
-              alt="Style Details Interior Design"
+              alt="Elegant interior design detail by Jigar Interiors, Vadodara"
             />
           </picture>
         </div>

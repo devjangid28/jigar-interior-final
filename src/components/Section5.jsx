@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import './Section5.css';
 
 const services = [
-  { label: 'We design', id: 'img_2_1', src: '/interior 1.png', alt: 'We design' },
-  { label: 'We Build', id: 'img_2_2', src: '/interior 2.png', alt: 'We Build' },
-  { label: 'We renovate', id: 'img_2_3', src: '/interior 3.png', alt: 'We renovate' },
-  { label: 'We furnish', id: 'img_2_4', src: '/interior 4.png', alt: 'We furnish' },
+  { label: 'We design', id: 'img_2_1', src: '/interior 1.png', alt: 'Interior design project in Vadodara' },
+  { label: 'We Build', id: 'img_2_2', src: '/interior 2.png', alt: 'Interior build project in Vadodara' },
+  { label: 'We renovate', id: 'img_2_3', src: '/interior 3.png', alt: 'Home renovation project in Vadodara' },
+  { label: 'We furnish', id: 'img_2_4', src: '/interior 4.png', alt: 'Furnished interior by Jigar Interiors, Vadodara' },
 ];
 
 const Section5 = () => {

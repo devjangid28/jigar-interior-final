@@ -30,7 +30,7 @@ const FrecciaSvg = () => (
 const projects = [
   {
     id: 'img_2',
-    alt: 'Living Room Interior',
+    alt: 'Living room interior design in Vadodara',
     name: 'Living Room',
     tag: 'the heart of every home',
     ratio: 'ratio-4-5',
@@ -40,7 +40,7 @@ const projects = [
   },
   {
     id: 'img_3',
-    alt: 'TV Lounge Interior',
+    alt: 'TV unit interior design in Vadodara',
     name: 'TV Lounge',
     tag: 'entertain, unwind, live',
     ratio: 'ratio-3-4',
@@ -48,7 +48,7 @@ const projects = [
   },
   {
     id: 'img_1',
-    alt: 'Dining Room Interior',
+    alt: 'Dining room interior design in Vadodara',
     name: 'Dining Room',
     tag: 'where meals become memories',
     ratio: 'ratio-4-5',
@@ -56,7 +56,7 @@ const projects = [
   },
   {
     id: 'img_0',
-    alt: 'Master Bedroom Interior',
+    alt: 'Master bedroom interior design in Vadodara',
     name: 'Master Bedroom',
     tag: 'quiet luxury & comfort',
     ratio: 'ratio-3-4',
@@ -64,7 +64,7 @@ const projects = [
   },
   {
     id: 'img_4',
-    alt: 'Grand Foyer Interior',
+    alt: 'Grand foyer entrance interior design in Vadodara',
     name: 'Grand Foyer',
     tag: 'first impressions, always',
     ratio: 'ratio-1-1',

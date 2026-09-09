@@ -56,6 +56,7 @@ const SideMenu = ({ isOpen, onClose }) => {
           <ul className="sidemenu__list">
             <li><a href="#s1_home" onClick={handleNavClick}>Home</a></li>
             <li><a href="#sec_servizi" onClick={handleNavClick}>Services</a></li>
+            <li><a href="/blog" onClick={handleNavClick}>Blog</a></li>
             <li><a href="#sec_realizzazioni" onClick={handleNavClick}>Projects</a></li>
             <li><a href="#contact" onClick={handleNavClick}>Contact</a></li>
           </ul>
@@ -102,16 +103,15 @@ const SideMenu = ({ isOpen, onClose }) => {
             <li>
               <div className="sidemenu__contact-title">Schedule</div>
               <div className="sidemenu__contact-content">
-                <div>Monday to Thursday 09:00 - 18:00</div>
-                <div>Friday 08:00 - 14:00</div>
-                <div>Closed Saturday and Sunday</div>
+                <div>Monday to Saturday 10:00 - 20:00</div>
+                <div>Closed Sunday</div>
               </div>
             </li>
             <li>
               <div className="sidemenu__contact-title">Phone</div>
               <div className="sidemenu__contact-content">
-                <a href="tel:+919879337290">+91 9879337290</a><br />
-                <a href="tel:+919724441259">+91 9724441259</a>
+                <a href="tel:+919724441259">+91 9724441259</a><br />
+                <a href="tel:+919879337290">+91 9879337290</a>
               </div>
             </li>
             <li>

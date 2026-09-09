@@ -1,0 +1,144 @@
+.blog {
+  background: #0e0f11;
+  color: #a2adb4;
+  min-height: 100vh;
+  font-family: 'Anek Bangla', sans-serif;
+}
+
+.blog__hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 150px 5vw 30px;
+}
+
+.blog__eyebrow {
+  color: #c9a96e;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 0 0 14px;
+}
+
+.blog__hero h1 {
+  color: #ffffff;
+  font-family: 'FKGrotesk-Regular', 'Anek Bangla', sans-serif;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.08;
+  margin: 0 0 18px;
+}
+
+.blog__intro {
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.blog__grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 5vw 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.blog__card {
+  display: block;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.blog__card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(201, 169, 110, 0.6);
+  transform: translateY(-4px);
+}
+
+.blog__fig {
+  margin: 0;
+  overflow: hidden;
+}
+
+.blog__fig img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.blog__card:hover .blog__fig img {
+  transform: scale(1.05);
+}
+
+.blog__body {
+  padding: 20px;
+  position: relative;
+}
+
+.blog__num {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: #c9a96e;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+.blog__body h2 {
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  padding-right: 44px;
+}
+
+.blog__body p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+.blog__read {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: #c9a96e;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: gap 0.2s;
+}
+
+.blog__card:hover .blog__read {
+  gap: 12px;
+}
+
+.blog__cta {
+  max-width: 1080px;
+  margin: 0 auto 70px;
+  padding: 60px 5vw 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.blog__cta h2 {
+  color: #ffffff;
+  font-family: 'FKGrotesk-Regular', 'Anek Bangla', sans-serif;
+  font-size: clamp(26px, 3.4vw, 40px);
+  margin: 0 0 14px;
+}
+
+.blog__cta p {
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 0 26px;
+}

@@ -10,7 +10,7 @@ const projects = [
     title: ['Living', 'Room'],
     image: '/living D.jpg',
     mobileImage: '/living.webp',
-    alt: 'Living Room',
+    alt: 'Living room interior design in Vadodara',
     images: [
       '/interior 3.png',
       '/interior 4.png',
@@ -24,7 +24,7 @@ const projects = [
     title: ['TV', 'Units', 'Design'],
     image: '/Tv D.jpg',
     mobileImage: '/tv unit design.jpg',
-    alt: 'TV Units Design',
+    alt: 'TV unit design in Vadodara living room',
     images: [
       '/interior 4.png',
       '/tv2.jpg',
@@ -36,7 +36,7 @@ const projects = [
     title: ['Kitchen', 'Design'],
     image: '/kitchen D.jpg',
     mobileImage: '/Kitchen M.jpg',
-    alt: 'Kitchen Design',
+    alt: 'Modular kitchen design in Vadodara',
     images: [
       '/kitchen.jpg',
       '/kitchen3.jpg',
@@ -48,7 +48,7 @@ const projects = [
     title: ['Dining', 'Room'],
     image: '/Dinning D.jpg',
     mobileImage: '/dinning.webp',
-    alt: 'Dining Room',
+    alt: 'Dining room interior design in Vadodara',
     images: [
       '/dinning2.jpg',
       '/dinning3.jpg',
@@ -60,7 +60,7 @@ const projects = [
     num: '5',
     title: ['Pooja', 'Room'],
     image: '/mandir.webp',
-    alt: 'Pooja Room',
+    alt: 'Pooja room design in Vadodara home',
     images: [
       '/pooja2.jpg',
       '/pooja3.jpg',
@@ -73,7 +73,7 @@ const projects = [
     title: ['Master', 'Bedroom'],
     image: '/Bedroom D.jpg',
     mobileImage: '/bedroom M.jpg',
-    alt: 'Master Bedroom',
+    alt: 'Master bedroom interior design in Vadodara',
     images: [
       '/interior 1.png',
       '/masterbed room.jpg',
@@ -91,7 +91,7 @@ const projects = [
     num: '7',
     title: ['Foyer'],
     image: '/foyer.webp',
-    alt: 'Foyer',
+    alt: 'Foyer entrance interior design in Vadodara',
     images: [
       '/interior 9.png',
       '/floyer1.jpg',
@@ -106,7 +106,7 @@ const projects = [
     title: ['Door', 'Design'],
     image: '/Room D.jpg',
     mobileImage: '/door.webp',
-    alt: 'Door Design',
+    alt: 'Interior door design in Vadodara',
     images: [
       '/door2.jpg',
     ],
@@ -114,11 +114,11 @@ const projects = [
 ];
 
 const collageImages = [
-  { src: '/living D.jpg', mobileSrc: '/living.webp', alt: 'Living Room' },
-  { src: '/Bedroom D.jpg', mobileSrc: '/bedroom M.jpg', alt: 'Master Bedroom' },
-  { src: '/kitchen D.jpg', mobileSrc: '/Kitchen M.jpg', alt: 'Kitchen Design' },
-  { src: '/mandir.webp', mobileSrc: '/mandir.webp', alt: 'Pooja Room' },
-  { src: '/Dinning D.jpg', mobileSrc: '/dinning.webp', alt: 'Dining Room' },
+  { src: '/living D.jpg', mobileSrc: '/living.webp', alt: 'Living room interior design in Vadodara' },
+  { src: '/Bedroom D.jpg', mobileSrc: '/bedroom M.jpg', alt: 'Master bedroom interior in Vadodara' },
+  { src: '/kitchen D.jpg', mobileSrc: '/Kitchen M.jpg', alt: 'Modular kitchen design in Vadodara' },
+  { src: '/mandir.webp', mobileSrc: '/mandir.webp', alt: 'Pooja room design in Vadodara' },
+  { src: '/Dinning D.jpg', mobileSrc: '/dinning.webp', alt: 'Dining room interior in Vadodara' },
 ];
 
 // slot definitions matching Framer exactly

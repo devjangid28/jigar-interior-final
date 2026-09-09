@@ -82,7 +82,7 @@ const Section3 = () => {
                 src="/interior 8.png"
                 width="100"
                 height="100"
-                alt="Pool inside the villa"
+                alt="Residential villa pool interior design in Vadodara"
               />
             </picture>
             <div className="filter filter_bt anim" ref={filterRef} style={{ opacity: isDesktop ? 0 : 1 }}></div>
